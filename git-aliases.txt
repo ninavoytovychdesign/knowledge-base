@@ -1,0 +1,13 @@
+# Git Aliases для швидкого оновлення
+# Додайте ці рядки до вашого ~/.zshrc або ~/.bashrc файлу:
+
+# Простий alias для швидкого оновлення
+alias gitup='git add . && git commit -m "update" && git push'
+
+# Alias з можливістю вказати повідомлення коміту
+alias gitupdate='f(){ git add . && git commit -m "${1:-update}" && git push; }; f'
+
+# Після додавання до ~/.zshrc виконайте: source ~/.zshrc
+# Потім можна використовувати:
+# gitup                    - для коміту з повідомленням "update"
+# gitupdate "fix bugs"     - для коміту з власним повідомленням
