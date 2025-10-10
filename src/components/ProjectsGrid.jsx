@@ -68,8 +68,8 @@ const ProjectsGrid = () => {
                 <h3 className="text-[28px] font-medium text-textPrimary font-poppins leading-[120%] group-hover:text-white slow-hover">
                   {projects[0].title}
                 </h3>
-                <button className="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center flex-shrink-0 hover:bg-white hover:border-transparent transition-all duration-200 ease-in-out group">
-                  <ArrowRight className="w-6 h-6 text-textSecondary group-hover:text-black transition-colors duration-200 ease-in-out" />
+                <button className="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:border-white transition-all duration-200 ease-in-out">
+                  <ArrowRight className="w-6 h-6 text-textSecondary group-hover:text-white transition-colors duration-200 ease-in-out" />
                 </button>
               </div>
               <p className="text-[16px] font-normal text-textSecondary font-poppins leading-[130%] max-w-[368px] group-hover:text-white slow-hover">
@@ -313,8 +313,8 @@ const ProjectsGrid = () => {
                 <h3 className="text-[28px] font-medium text-textPrimary font-poppins leading-[120%] group-hover:text-white slow-hover">
                   {projects[1].title}
                 </h3>
-                <button className="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center flex-shrink-0 hover:bg-white hover:border-transparent transition-all duration-200 ease-in-out group">
-                  <ArrowRight className="w-6 h-6 text-textSecondary group-hover:text-black transition-colors duration-200 ease-in-out" />
+                <button className="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:border-white transition-all duration-200 ease-in-out">
+                  <ArrowRight className="w-6 h-6 text-textSecondary group-hover:text-white transition-colors duration-200 ease-in-out" />
                 </button>
               </div>
               <p className="text-[16px] font-normal text-textSecondary font-poppins leading-[130%] group-hover:text-white slow-hover">
@@ -405,8 +405,8 @@ const ProjectsGrid = () => {
                 <h3 className="text-[28px] font-medium text-textPrimary font-poppins leading-[120%] group-hover:text-white slow-hover">
                   {projects[3].title}
                 </h3>
-                <button className="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center flex-shrink-0 hover:bg-white hover:border-transparent transition-all duration-200 ease-in-out group">
-                  <ArrowRight className="w-6 h-6 text-textSecondary group-hover:text-black transition-colors duration-200 ease-in-out" />
+                <button className="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:border-white transition-all duration-200 ease-in-out">
+                  <ArrowRight className="w-6 h-6 text-textSecondary group-hover:text-white transition-colors duration-200 ease-in-out" />
                 </button>
               </div>
               <p className="text-[16px] font-normal text-textSecondary font-poppins leading-[130%] group-hover:text-white slow-hover">
@@ -421,8 +421,8 @@ const ProjectsGrid = () => {
                 <h3 className="text-[28px] font-medium text-textPrimary font-poppins leading-[120%] group-hover:text-white slow-hover">
                   {projects[2].title}
                 </h3>
-                <button className="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center flex-shrink-0 hover:bg-white hover:border-black transition-all duration-200 ease-in-out">
-                  <ArrowRight className="w-6 h-6 text-textSecondary hover:text-black transition-colors duration-200 ease-in-out" />
+                <button className="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:border-white transition-all duration-200 ease-in-out">
+                  <ArrowRight className="w-6 h-6 text-textSecondary group-hover:text-white transition-colors duration-200 ease-in-out" />
                 </button>
               </div>
               <p className="text-[16px] font-normal text-textSecondary font-poppins leading-[130%] max-w-[368px] group-hover:text-white slow-hover">
@@ -458,8 +458,8 @@ const ProjectsGrid = () => {
                 <h3 className="text-[28px] font-medium text-textPrimary font-poppins leading-[120%]">
                   {projects[4].title}
                 </h3>
-                <button className="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center flex-shrink-0 hover:bg-white hover:border-transparent transition-all duration-200 ease-in-out group">
-                  <ArrowRight className="w-6 h-6 text-textSecondary group-hover:text-black transition-colors duration-200 ease-in-out" />
+                <button className="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:border-white transition-all duration-200 ease-in-out">
+                  <ArrowRight className="w-6 h-6 text-textSecondary group-hover:text-white transition-colors duration-200 ease-in-out" />
                 </button>
               </div>
               <p className="text-[16px] font-normal text-textSecondary font-poppins leading-[130%] max-w-[368px]">
@@ -703,8 +703,8 @@ const ProjectsGrid = () => {
                 <h3 className="text-[28px] font-medium text-textPrimary font-poppins leading-[120%] group-hover:text-white slow-hover">
                   {projects[5].title}
                 </h3>
-                <button className="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center flex-shrink-0 hover:bg-white hover:border-transparent transition-all duration-200 ease-in-out">
-                  <ArrowRight className="w-6 h-6 text-textSecondary group-hover:text-black transition-colors duration-200 ease-in-out" />
+                <button className="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:border-white transition-all duration-200 ease-in-out">
+                  <ArrowRight className="w-6 h-6 text-textSecondary group-hover:text-white transition-colors duration-200 ease-in-out" />
                 </button>
               </div>
               <p className="text-[16px] font-normal text-textSecondary font-poppins leading-[130%] group-hover:text-white slow-hover">
