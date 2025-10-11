@@ -3,10 +3,10 @@
 База знань Nina Voytovych: промпти, процеси, дизайн-система, нотатки та ADR.
 
 ## Розділи
-- [Prompts — UX Research]({{ site.baseurl }}/prompts/ux-research/)
-- [Design System — Tokens]({{ site.baseurl }}/design-system/tokens/)
-- [Process — Discovery]({{ site.baseurl }}/process/discovery/)
-- [Tools — Cursor]({{ site.baseurl }}/tools/cursor/)
+- [Prompts — UX Research]({{ site.baseurl }}/prompts/)
+- [Design System — Tokens]({{ site.baseurl }}/design-system/)
+- [Process — Discovery]({{ site.baseurl }}/process/)
+- [Tools — Cursor]({{ site.baseurl }}/tools/)
 
 ## Структура
 - `docs/` — публічна документація
