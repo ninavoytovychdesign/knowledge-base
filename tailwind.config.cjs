@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
+        'helvetica': ['Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
         // Brand colors

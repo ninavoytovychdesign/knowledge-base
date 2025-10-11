@@ -44,7 +44,7 @@ export const translations = {
     emailPlaceholder: "Your email...",
     messageLabel: "Message",
     messagePlaceholder: "Your message...",
-    sendButton: "Send a message →",
+    sendButton: "Send a message",
     viewMore: "View More",
     
     // About Page
@@ -56,9 +56,10 @@ export const translations = {
     aboutText5: "For me, design isn't just about pixels on a screen — it's about creating experiences that make people's lives a little easier and a little more beautiful.",
     podcastGuest: "Podcast Guest",
     listenOnSpotify: "Listen on Spotify",
-    certificates: "Certificates",
+    certificates: "My Certificates",
     projectorInstitute: "Projector Institute",
     downloadPdf: "Download PDF",
+    cvTitle: "CV",
     // Footer
     footerText: "© 2025 Nina Voytovych. All rights reserved.",
     privacyPolicy: "Privacy Policy"
@@ -109,7 +110,7 @@ export const translations = {
     emailPlaceholder: "Ваш email...",
     messageLabel: "Повідомлення", 
     messagePlaceholder: "Ваше повідомлення...",
-    sendButton: "Надіслати повідомлення →",
+    sendButton: "Надіслати повідомлення",
     viewMore: "Переглянути більше",
     
     // About Page
@@ -121,9 +122,10 @@ export const translations = {
     aboutText5: "Для мене дизайн — це не просто пікселі на екрані — це створення досвіду, який робить життя людей трохи легшим і трохи красивішим.",
     podcastGuest: "Гість подкасту",
     listenOnSpotify: "Слухати на Spotify",
-    certificates: "Сертифікати",
+    certificates: "Мої сертифікати",
     projectorInstitute: "Projector Institute",
     downloadPdf: "Завантажити PDF",
+    cvTitle: "CV",
     // Footer
     footerText: "© 2025 Ніна Войтович. Всі права захищені.",
     privacyPolicy: "Політика конфіденційності"
@@ -174,7 +176,7 @@ export const translations = {
     emailPlaceholder: "La tua email...",
     messageLabel: "Messaggio",
     messagePlaceholder: "Il tuo messaggio...",
-    sendButton: "Invia un messaggio →",
+    sendButton: "Invia un messaggio",
     viewMore: "Vedi di più",
     
     // About Page
@@ -186,9 +188,10 @@ export const translations = {
     aboutText5: "Per me, il design non riguarda solo i pixel su uno schermo — si tratta di creare esperienze che rendono la vita delle persone un po' più facile e un po' più bella.",
     podcastGuest: "Ospite Podcast",
     listenOnSpotify: "Ascolta su Spotify",
-    certificates: "Certificati",
+    certificates: "I miei certificati",
     projectorInstitute: "Projector Institute",
     downloadPdf: "Scarica PDF",
+    cvTitle: "CV",
     // Footer
     footerText: "© 2025 Nina Voytovych. Tutti i diritti riservati.",
     privacyPolicy: "Informativa sulla privacy"

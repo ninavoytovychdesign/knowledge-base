@@ -105,24 +105,24 @@ const ProjectsGrid = () => {
     {
       id: 1,
       key: 'novaPost',
-      position: { top: '15%', left: '15%' },
+      position: { top: '15%', left: '25%' },
       animation: 'float-1',
       letter: 'N',
       title: 'Nova Post',
       description: 'Comprehensive UX research of the business account dashboard aimed at identifying user pain points',
-      mockups: ['/mockups/novapost1.png'],
+      mockups: ['/mockups/novapost-mockup.png'],
       logo: '/logos/novapost-logo.png',
       color: '#DA292B'
     },
     {
       id: 2,
       key: 'healthPad',
-      position: { top: '20%', right: '15%' },
+      position: { top: '20%', right: '25%' },
       animation: 'float-2',
       letter: 'H',
       title: 'HealthPad',
       description: 'A self-initiated mobile application — a digital health record for the whole family',
-      mockups: ['/mockups/healthpad1.png'],
+      mockups: ['/mockups/healthpad-mockup.png'],
       logo: '/logos/healthpad-logo.png',
       color: '#11B6E2'
     },
@@ -147,7 +147,7 @@ const ProjectsGrid = () => {
       letter: 'R',
       title: 'Riverton Group',
       description: 'A complete redesign of the brand identity and landing page, supported by UX research',
-      mockups: ['/mockups/riverton1.png'],
+      mockups: ['/mockups/riverton-mockup.png'],
       logo: '/logos/riverton-logo.png',
       color: '#103FD3'
     },
@@ -224,7 +224,7 @@ const ProjectsGrid = () => {
           onClick={(e) => e.stopPropagation()}
         >
             <div className="bg-[#141414] rounded-lg p-4 shadow-2xl w-[300px] h-[550px] backdrop-blur-sm">
-             {clickedProject.title === 'Open Kharkiv' ? (
+             {clickedProject.title === 'Open Kharkiv' || clickedProject.title === 'HealthPad' ? (
                /* Open Kharkiv - Auto Layout Container */
                <div className="flex flex-col h-full">
                  {/* Logo at the top */}
@@ -241,7 +241,7 @@ const ProjectsGrid = () => {
                  )}
                  
                  {/* Title */}
-                 <h3 className="text-white text-[18px] font-medium font-poppins mb-4 text-left">
+                 <h3 className="text-white text-[18px] font-medium font-helvetica mb-4 text-left">
                    {clickedProject.title}
                  </h3>
                  
@@ -258,16 +258,16 @@ const ProjectsGrid = () => {
                  </div>
                 
                 {/* Description */}
-                <p className="text-[#CCCCCC] text-[14px] font-poppins leading-[140%] mb-6">
+                <p className="text-[#CCCCCC] text-[14px] font-helvetica leading-[140%] mb-6">
                    {t(`projects.${clickedProject.key}.description`)}
                 </p>
                 
                 {/* View Project Button */}
-                <button className="w-full flex items-center justify-between px-4 py-2 rounded-lg bg-white hover:bg-gradient-accent transition-all duration-500 ease-in-out group">
-                  <span className="text-black text-[14px] font-medium font-poppins">
-                    {t('viewMore')}
-                  </span>
-                  <ArrowRight className="w-4 h-4 text-black" />
+                <button className="w-full flex items-center justify-between px-4 py-2 rounded-lg font-medium text-black bg-gradient-accent hover:opacity-90 transition">
+                  <span>{t('viewMore')}</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </button>
               </div>
              ) : (
@@ -287,37 +287,33 @@ const ProjectsGrid = () => {
                  )}
                  
                  {/* Title */}
-                 <h3 className="text-white text-[18px] font-medium font-poppins mb-4 text-left">
+                 <h3 className="text-white text-[18px] font-medium font-helvetica mb-4 text-left">
                    {clickedProject.title}
                  </h3>
                  
-                 {/* Mockups */}
-                 <div className="flex flex-col gap-3 flex-1 mb-3">
-                  {clickedProject.mockups.map((mockup, index) => (
-                    <div key={index} className="w-full aspect-square rounded overflow-hidden">
-                      <img
-                        src={mockup}
-                        alt={`${clickedProject.title} mockup ${index + 1}`}
-                        className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
-              />
-            </div>
-                  ))}
-        </div>
+                 {/* Mockup Container */}
+                 <div className="flex-1 flex items-center justify-center rounded overflow-hidden mb-3">
+                  <img
+                    src={clickedProject.mockups[0]}
+                    alt={`${clickedProject.title} mockup`}
+                    className="w-full h-full object-cover transform rotate-0"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                </div>
 
                 {/* Description */}
-                <p className="text-[#CCCCCC] text-[14px] font-poppins leading-[140%] mb-6">
+                <p className="text-[#CCCCCC] text-[14px] font-helvetica leading-[140%] mb-6">
                    {t(`projects.${clickedProject.key}.description`)}
                 </p>
                 
                 {/* View Project Button */}
-                <button className="w-full flex items-center justify-between px-4 py-2 rounded-lg bg-white hover:bg-gradient-accent transition-all duration-500 ease-in-out group">
-                  <span className="text-black text-[14px] font-medium font-poppins">
-                    {t('viewMore')}
-                  </span>
-                  <ArrowRight className="w-4 h-4 text-black" />
+                <button className="w-full flex items-center justify-between px-4 py-2 rounded-lg font-medium text-black bg-gradient-accent hover:opacity-90 transition">
+                  <span>{t('viewMore')}</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </button>
               </div>
             )}

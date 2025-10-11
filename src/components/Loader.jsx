@@ -23,7 +23,7 @@ export default function Loader() {
     <div className={`fixed inset-0 bg-black flex items-center justify-center z-50 transition-all duration-2000 ease-out ${
       isComplete ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
     }`}>
-      <div className="text-[48px] font-medium text-white transition-all duration-1500 ease-out">
+      <div className="text-[48px] font-medium text-white font-helvetica transition-all duration-1500 ease-out">
         {progress}
       </div>
     </div>

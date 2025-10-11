@@ -9,12 +9,12 @@ const CaseCard = ({ title, description, size = 'small' }) => {
       <div className="flex justify-between items-start h-full">
         <div className="flex-1 pr-4">
           {/* Тайтл */}
-          <h3 className="text-[32px] font-medium text-gray-900 font-poppins mb-4">
+          <h3 className="text-[32px] font-medium text-gray-900 font-helvetica mb-4">
             {title}
           </h3>
           
           {/* Опис */}
-          <p className="text-[20px] font-normal text-gray-700 font-poppins">
+          <p className="text-[20px] font-normal text-gray-700 font-helvetica">
             {description}
           </p>
         </div>

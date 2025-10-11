@@ -32,7 +32,7 @@ export function CertificatesSection() {
     <div className="w-full py-20">
       <div className="flex justify-center">
         <div className="w-[1344px]">
-          <h3 className="text-[32px] font-medium text-textPrimary leading-[120%] mb-8 font-poppins text-left">
+          <h3 className="text-[32px] font-medium text-textPrimary leading-[120%] mb-8 font-helvetica text-left">
             My Certificates
           </h3>
           <div className="flex items-center gap-6">
