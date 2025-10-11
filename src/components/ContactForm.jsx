@@ -1,47 +1,48 @@
 import { useState } from "react";
+import { useLanguage } from "../lib/LanguageContext";
 
 export default function ContactForm() {
   const [message, setMessage] = useState("");
+  const { t } = useLanguage();
 
   return (
     <section className="flex justify-center items-center py-20 bg-black">
-      <div className="w-[808px] bg-transparent rounded-2xl p-10">
+      <div className="w-[808px] bg-transparent rounded-lg p-10">
         <h2 className="text-2xl font-semibold text-[#4C4C4C] text-center mb-4">
-          Contacts
+          {t('contactTitle')}
         </h2>
         <p className="text-[#777777] text-center mb-10">
-          Do you have a question for me? Send me a message below, <br />
-          and I will get back to you soon.
+          {t('contactDescription')}
         </p>
 
         <form className="flex flex-col gap-6">
           <div>
-            <label className="block text-sm text-[#4C4C4C] mb-2">Name</label>
+            <label className="block text-sm text-[#4C4C4C] mb-2">{t('nameLabel')}</label>
             <input
               type="text"
-              placeholder="Your name..."
-              className="w-full bg-transparent text-[#E6E6E6] placeholder-[#343434] placeholder:text-sm placeholder:font-normal rounded-xl px-4 py-3 focus:outline-none border border-[#343434] hover:border-[#555555] hover:bg-[#1B1B1B] transition-all duration-300"
+              placeholder={t('namePlaceholder')}
+              className="w-full bg-transparent text-[#E6E6E6] placeholder-[#343434] placeholder:text-sm placeholder:font-normal rounded-lg px-4 py-3 focus:outline-none border border-[#343434] hover:border-[#555555] hover:bg-[#1B1B1B] transition-all duration-300"
             />
           </div>
 
           <div>
-            <label className="block text-sm text-[#4C4C4C] mb-2">Email</label>
+            <label className="block text-sm text-[#4C4C4C] mb-2">{t('emailLabel')}</label>
             <input
               type="email"
-              placeholder="Your email..."
-              className="w-full bg-transparent text-[#E6E6E6] placeholder-[#343434] placeholder:text-sm placeholder:font-normal rounded-xl px-4 py-3 focus:outline-none border border-[#343434] hover:border-[#555555] hover:bg-[#1B1B1B] transition-all duration-300"
+              placeholder={t('emailPlaceholder')}
+              className="w-full bg-transparent text-[#E6E6E6] placeholder-[#343434] placeholder:text-sm placeholder:font-normal rounded-lg px-4 py-3 focus:outline-none border border-[#343434] hover:border-[#555555] hover:bg-[#1B1B1B] transition-all duration-300"
             />
           </div>
 
           <div>
-            <label className="block text-sm text-[#4C4C4C] mb-2">Message</label>
+            <label className="block text-sm text-[#4C4C4C] mb-2">{t('messageLabel')}</label>
             <textarea
-              placeholder="Your message..."
+              placeholder={t('messagePlaceholder')}
               rows={6}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               maxLength={1000}
-              className="w-full bg-transparent text-[#E6E6E6] placeholder-[#343434] placeholder:text-sm placeholder:font-normal rounded-xl px-4 py-3 focus:outline-none border border-[#343434] hover:border-[#555555] hover:bg-[#1B1B1B] transition-all duration-300"
+              className="w-full bg-transparent text-[#E6E6E6] placeholder-[#343434] placeholder:text-sm placeholder:font-normal rounded-lg px-4 py-3 focus:outline-none border border-[#343434] hover:border-[#555555] hover:bg-[#1B1B1B] transition-all duration-300"
             />
             <div className="text-right text-sm text-[#777777] mt-1">
               {message.length}/1000
@@ -50,9 +51,9 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            className="w-full py-3 rounded-full font-medium text-black bg-gradient-accent hover:opacity-90 transition"
+            className="w-full py-3 rounded-lg font-medium text-black bg-gradient-accent hover:opacity-90 transition"
           >
-            Send a message →
+            {t('sendButton')}
           </button>
         </form>
       </div>

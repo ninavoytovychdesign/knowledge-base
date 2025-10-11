@@ -1,7 +1,9 @@
 import React from 'react';
 import { CertificatesSection } from '../components/CertificatesSection.jsx';
+import { useLanguage } from '../lib/LanguageContext';
 
 export default function About() {
+  const { t } = useLanguage();
   return (
     <div className="bg-background">
       <main className="py-8">
@@ -12,28 +14,28 @@ export default function About() {
               {/* Текстовий блок */}
               <div className="w-[660px] flex-shrink-0">
                 <h2 className="text-[32px] font-medium text-textPrimary leading-[120%] mb-8 font-poppins">
-                  About me
+                  {t('aboutTitle')}
                 </h2>
                 
                 <div className="space-y-6">
                   <p className="text-[20px] font-light text-textSecondary leading-[130%] font-poppins">
-                    I'm Nina Voytovych, a UI/UX designer based in Fano, Italy. My path into design started with a love for art and composition, and today I combine that creative background with a sharp focus on usability and user needs.
+                    {t('aboutText1')}
                   </p>
                   
                   <p className="text-[20px] font-light text-textSecondary leading-[130%] font-poppins">
-                    I graduated from the Academy of Arts with a Master's degree in Design, which gave me a strong background in composition and color theory. Over the last years, I've worked on diverse projects — from e-commerce redesigns and landing pages to UX research for digital products and even investment dashboards under NDA. I enjoy the challenge of turning complex ideas into designs that feel effortless, clear, and visually engaging.
+                    {t('aboutText2')}
                   </p>
                   
                   <p className="text-[20px] font-light text-textSecondary leading-[130%] font-poppins">
-                    Collaboration is at the heart of how I work: I stay close to both users and developers, presenting solutions, refining details, and making sure the final product delivers real value. My recent case studies (like Riverton Group and Vertex Studio) reflect this mix of creativity and practicality.
+                    {t('aboutText3')}
                   </p>
                   
                   <p className="text-[20px] font-light text-textSecondary leading-[130%] font-poppins">
-                    Outside of work, I'm constantly exploring — from experimenting with AI-powered tools for design to diving into books, traveling, photography, and everyday details that spark inspiration.
+                    {t('aboutText4')}
                   </p>
                   
                   <p className="text-[20px] font-light text-textSecondary leading-[130%] font-poppins">
-                    For me, design isn't just about pixels on a screen — it's about creating experiences that make people's lives a little easier and a little more beautiful.
+                    {t('aboutText5')}
                   </p>
                 </div>
               </div>
@@ -42,12 +44,12 @@ export default function About() {
               <div className="flex-shrink-0 pt-[75px] ml-[10px]">
                 <div className="grid grid-cols-2 gap-6">
                   {/* Card 1 - Podcast Guest */}
-                  <div className="relative h-full rounded-2xl bg-[#141414] p-6 transition-all duration-300 hover:bg-[#1B1B1B]">
+                  <div className="relative h-full rounded-lg bg-[#141414] p-6 transition-all duration-300 hover:bg-[#1B1B1B]">
                     <a 
                       href="https://open.spotify.com/episode/2LFjZ4nII3Z3iQDHqxlk0L?si=9133db58bd8f422d&nd=1&dlsi=27a591b0e5fb4461"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-[260px] h-[260px] rounded-2xl shadow-sm cursor-pointer transition-colors duration-200 flex flex-col items-center justify-center"
+                      className="w-[260px] h-[260px] rounded-lg shadow-sm cursor-pointer transition-colors duration-200 flex flex-col items-center justify-center"
                     >
                       {/* Spotify Icon - Centered */}
                       <div className="w-8 h-8 bg-[#1DB954] rounded-full flex items-center justify-center mb-4">
@@ -57,27 +59,27 @@ export default function About() {
                       </div>
                       
                       {/* Title */}
-                      <h3 className="text-[32px] font-medium text-textPrimary font-poppins mb-2 leading-[120%] text-center">Podcast Guest</h3>
+                      <h3 className="text-[32px] font-medium text-textPrimary font-poppins mb-2 leading-[120%] text-center">{t('podcastGuest')}</h3>
                       
                       {/* Subtitle */}
-                      <p className="text-sm text-[#1DB954] font-medium text-center">Listen on Spotify</p>
+                      <p className="text-sm text-[#1DB954] font-medium text-center">{t('listenOnSpotify')}</p>
                     </a>
                   </div>
                   
                   {/* Card 2 - My Photo */}
-                  <div className="relative h-full rounded-2xl bg-[#141414] transition-all duration-300 overflow-hidden hover:bg-[#1B1B1B]">
+                  <div className="relative h-full rounded-lg bg-[#141414] transition-all duration-300 overflow-hidden hover:bg-[#1B1B1B]">
                     <img 
                       src="/nina-photo.jpg" 
                       alt="Nina Voytovych" 
-                      className="w-[307px] h-[307px] object-cover rounded-2xl hover:scale-105 transition-transform duration-300 ease-in-out"
+                      className="w-[307px] h-[307px] object-cover rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out"
                     />
                   </div>
                   
                   {/* Card 3 - Certificates */}
-                  <div className="relative h-full rounded-2xl bg-[#141414] p-6 transition-all duration-300 hover:bg-[#1B1B1B]">
+                  <div className="relative h-full rounded-lg bg-[#141414] p-6 transition-all duration-300 hover:bg-[#1B1B1B]">
                     <a 
                       href="#certificates"
-                      className="w-[260px] h-[260px] rounded-2xl shadow-sm cursor-pointer transition-colors duration-200 flex flex-col items-center justify-center"
+                      className="w-[260px] h-[260px] rounded-lg shadow-sm cursor-pointer transition-colors duration-200 flex flex-col items-center justify-center"
                     >
                       {/* Projector Institute Logo - Centered */}
                       <div className="w-20 h-12 flex items-center justify-center mb-4">
@@ -99,20 +101,20 @@ export default function About() {
                       </div>
                       
                       {/* Title */}
-                      <h3 className="text-[32px] font-medium text-textPrimary font-poppins mb-2 leading-[120%] text-center">Certificates</h3>
+                      <h3 className="text-[32px] font-medium text-textPrimary font-poppins mb-2 leading-[120%] text-center">{t('certificates')}</h3>
                       
                       {/* Subtitle */}
-                      <p className="text-[16px] text-textSecondary font-medium text-center">Projector Institute</p>
+                      <p className="text-[16px] text-textSecondary font-medium text-center">{t('projectorInstitute')}</p>
                     </a>
                   </div>
                   
                   {/* Card 4 - CV */}
-                  <div className="relative h-full rounded-2xl bg-[#141414] p-6 transition-all duration-300 hover:bg-[#1B1B1B]">
+                  <div className="relative h-full rounded-lg bg-[#141414] p-6 transition-all duration-300 hover:bg-[#1B1B1B]">
                     <a 
                       href="/CV.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-[260px] h-[260px] rounded-2xl shadow-sm cursor-pointer transition-colors duration-200 flex flex-col items-center justify-center"
+                      className="w-[260px] h-[260px] rounded-lg shadow-sm cursor-pointer transition-colors duration-200 flex flex-col items-center justify-center"
                     >
                       {/* Download Arrow Icon - Centered */}
                       <div className="w-12 h-12 flex items-center justify-center mb-4">
@@ -125,7 +127,7 @@ export default function About() {
                       <h3 className="text-[32px] font-medium text-textPrimary font-poppins mb-2 leading-[120%] text-center">CV</h3>
                       
                       {/* Subtitle */}
-                      <p className="text-[16px] text-textSecondary font-medium text-center">Download PDF</p>
+                      <p className="text-[16px] text-textSecondary font-medium text-center">{t('downloadPdf')}</p>
                     </a>
                   </div>
                 </div>

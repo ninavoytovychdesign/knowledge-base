@@ -61,7 +61,7 @@ export const DraggableCardBody = ({ children, className }) => {
         ease: "easeOut"
       }}
     >
-      <div className="relative rounded-xl overflow-hidden">
+      <div className="relative rounded-lg overflow-hidden">
         {children}
       </div>
     </motion.div>

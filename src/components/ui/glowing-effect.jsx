@@ -57,7 +57,7 @@ export const GlowingEffect = ({
     >
       {glow && (
         <div
-          className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-all duration-300"
+          className="pointer-events-none absolute inset-0 rounded-lg opacity-0 transition-all duration-300"
           style={{
             background: `radial-gradient(${spread}px circle at var(--mouse-x) var(--mouse-y), ${glowColor}15, transparent 40%)`,
             opacity: isHovered ? 1 : 0,
