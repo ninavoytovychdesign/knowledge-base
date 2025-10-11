@@ -1,0 +1,14 @@
+# node / tooling
+node_modules/
+dist/
+.cache/
+.vite/
+# macOS
+.DS_Store
+# design exports
+*.sketch
+*.fig
+*.xd
+*.psd
+# env
+.env*
