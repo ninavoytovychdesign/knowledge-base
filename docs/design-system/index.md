@@ -7,6 +7,6 @@ layout: default
 Короткий опис розділу. Тут будуть нотатки та шаблони.
 
 ## Підрозділи
-- [Tokens]({{ site.baseurl }}/design-system/tokens/)
-- [Typography]({{ site.baseurl }}/design-system/typography/)
-- [Components]({{ site.baseurl }}/design-system/components/)
+- [Tokens]({{ site.baseurl }}/design-system/tokens.html)
+- [Typography]({{ site.baseurl }}/design-system/typography.html)
+- [Components]({{ site.baseurl }}/design-system/components.html)
