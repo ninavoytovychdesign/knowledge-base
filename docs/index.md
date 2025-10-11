@@ -1,8 +1,3 @@
----
-layout: default
-title: Knowledge Base
----
-
 # Knowledge Base
 
 База знань Nina Voytovych: промпти, процеси, дизайн-система, нотатки та ADR.

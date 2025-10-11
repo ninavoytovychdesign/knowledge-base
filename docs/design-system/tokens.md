@@ -1,8 +1,3 @@
----
-layout: default
-title: Design Tokens
----
-
 # Design Tokens
 
 ## Кольори

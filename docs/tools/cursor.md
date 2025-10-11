@@ -1,8 +1,3 @@
----
-layout: default
-title: Cursor Tools
----
-
 # Cursor Tools
 
 ## Стиль промптів

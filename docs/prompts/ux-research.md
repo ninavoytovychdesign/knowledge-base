@@ -1,8 +1,3 @@
----
-layout: default
-title: UX Research Prompts
----
-
 # Prompts — UX Research
 
 ## Інтерв'ю

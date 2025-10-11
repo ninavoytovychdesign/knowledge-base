@@ -1,8 +1,3 @@
----
-layout: default
-title: Discovery Process
----
-
 # Discovery Process
 
 ## Цілі та завдання
