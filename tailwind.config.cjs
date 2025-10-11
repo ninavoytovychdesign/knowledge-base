@@ -86,6 +86,50 @@ module.exports = {
           'to': {
             'transform': 'rotate(360deg)',
           },
+        },
+        
+        // Custom duration for certificate hover effect
+        '.duration-400': {
+          'transition-duration': '400ms',
+        },
+        '.duration-600': {
+          'transition-duration': '600ms',
+        },
+        '.ease-magnetic': {
+          'transition-timing-function': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        },
+        '@keyframes electric-pulse': {
+          '0%, 100%': {
+            'box-shadow': '0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff',
+            'border-color': '#00ffff'
+          },
+          '50%': {
+            'box-shadow': '0 0 30px #00ffff, 0 0 60px #00ffff, 0 0 90px #00ffff',
+            'border-color': '#00ccff'
+          }
+        },
+        
+        // 3D Perspective and transforms
+        '.perspective-1000': {
+          'perspective': '1000px',
+        },
+        '.transform-style-preserve-3d': {
+          'transform-style': 'preserve-3d',
+        },
+        '.backface-hidden': {
+          'backface-visibility': 'hidden',
+        },
+        '.rotate-y-12': {
+          'transform': 'rotateY(12deg)',
+        },
+        '.rotate-y-180': {
+          'transform': 'rotateY(180deg)',
+        },
+        '.translate-z-20': {
+          'transform': 'translateZ(20px)',
+        },
+        '.shadow-3xl': {
+          'box-shadow': '0 35px 60px -12px rgba(0, 0, 0, 0.25)',
         }
       })
     }
