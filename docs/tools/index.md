@@ -7,6 +7,6 @@ layout: default
 Короткий опис розділу. Тут будуть нотатки та шаблони.
 
 ## Підрозділи
-- [Cursor](cursor/)
-- [Figma AI](figma-ai/)
-- [Tailwind](tailwind/)
+- [Cursor]({{ site.baseurl }}/tools/cursor/)
+- [Figma AI]({{ site.baseurl }}/tools/figma-ai/)
+- [Tailwind]({{ site.baseurl }}/tools/tailwind/)

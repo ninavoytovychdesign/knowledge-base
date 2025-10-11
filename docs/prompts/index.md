@@ -7,6 +7,6 @@ layout: default
 Короткий опис розділу. Тут будуть нотатки та шаблони.
 
 ## Підрозділи
-- [UX Research](ux-research/)
-- [Copywriting](copywriting/)
-- [Component Generation](component-generation/)
+- [UX Research]({{ site.baseurl }}/prompts/ux-research/)
+- [Copywriting]({{ site.baseurl }}/prompts/copywriting/)
+- [Component Generation]({{ site.baseurl }}/prompts/component-generation/)

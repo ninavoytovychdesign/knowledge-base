@@ -7,6 +7,6 @@ layout: default
 Короткий опис розділу. Тут будуть нотатки та шаблони.
 
 ## Підрозділи
-- [Discovery](discovery/)
-- [Delivery](delivery/)
-- [QA Checklist](qa-checklist/)
+- [Discovery]({{ site.baseurl }}/process/discovery/)
+- [Delivery]({{ site.baseurl }}/process/delivery/)
+- [QA Checklist]({{ site.baseurl }}/process/qa-checklist/)
