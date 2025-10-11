@@ -1,2 +1,25 @@
 title: Nina Knowledge Base
+description: База знань Nina Voytovych: промпти, процеси, дизайн-система, нотатки та ADR
 theme: minima
+baseurl: /knowledge-base
+url: https://ninavoytovychdesign.github.io
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Prompts
+    url: /prompts/ux-research/
+  - title: Design System
+    url: /design-system/tokens/
+  - title: Process
+    url: /process/discovery/
+  - title: Tools
+    url: /tools/cursor/
