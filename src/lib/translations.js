@@ -15,23 +15,28 @@ export const translations = {
     projects: {
       novaPost: {
         title: "Nova Post",
-        description: "Comprehensive UX research of the business account dashboard aimed at identifying user pain points"
+        description: "Comprehensive UX research of the business account dashboard aimed at identifying user pain points",
+        labelDescription: "UX research of the business account"
       },
       healthPad: {
         title: "HealthPad", 
-        description: "A self-initiated mobile application — a digital health record for the whole family"
+        description: "A self-initiated mobile application — a digital health record for the whole family",
+        labelDescription: "Medical mobile application"
       },
       vertexStudio: {
         title: "Vertex Studio",
-        description: "A visual identity and website concept for a creative studio, showcasing a modern and elegant approach"
+        description: "A visual identity and website concept for a creative studio, showcasing a modern and elegant approach",
+        labelDescription: "Design concept"
       },
       rivertonGroup: {
         title: "Riverton Group",
-        description: "A complete redesign of the brand identity and landing page, supported by UX research"
+        description: "A complete redesign of the brand identity and landing page, supported by UX research",
+        labelDescription: "Branding, Landing design & UX research"
       },
       openKharkiv: {
         title: "Open Kharkiv",
-        description: "A redesign of a civic technology mobile application, improving usability, streamlining flows"
+        description: "A redesign of a civic technology mobile application, improving usability, streamlining flows",
+        labelDescription: "Mobile app redesign & UX update"
       }
     },
     
@@ -81,23 +86,28 @@ export const translations = {
     projects: {
       novaPost: {
         title: "Нова Пошта",
-        description: "Комплексне UX дослідження панелі бізнес-акаунту з метою виявлення болючих точок користувачів"
+        description: "Комплексне UX дослідження панелі бізнес-акаунту з метою виявлення болючих точок користувачів",
+        labelDescription: "UX дослідження бізнес-акаунту"
       },
       healthPad: {
         title: "HealthPad",
-        description: "Самостійно ініційований мобільний додаток — цифрова медична картка для всієї родини"
+        description: "Самостійно ініційований мобільний додаток — цифрова медична картка для всієї родини",
+        labelDescription: "Медичний мобільний додаток"
       },
       vertexStudio: {
         title: "Vertex Studio", 
-        description: "Візуальна ідентичність та концепція веб-сайту для креативної студії, що демонструє сучасний та елегантний підхід"
+        description: "Візуальна ідентичність та концепція веб-сайту для креативної студії, що демонструє сучасний та елегантний підхід",
+        labelDescription: "Дизайн концепт"
       },
       rivertonGroup: {
         title: "Riverton Group",
-        description: "Повний редизайн фірмового стилю та лендінгу, підкріплений UX дослідженням"
+        description: "Повний редизайн фірмового стилю та лендінгу, підкріплений UX дослідженням",
+        labelDescription: "Брендинг, дизайн лендінгу та UX дослідження"
       },
       openKharkiv: {
         title: "Відкритий Харків",
-        description: "Редизайн мобільного додатку громадських технологій, покращення зручності використання та оптимізація потоків"
+        description: "Редизайн мобільного додатку громадських технологій, покращення зручності використання та оптимізація потоків",
+        labelDescription: "Редизайн моб додатку та оновлення UX"
       }
     },
     
@@ -147,23 +157,28 @@ export const translations = {
     projects: {
       novaPost: {
         title: "Nova Post",
-        description: "Ricerca UX completa del dashboard dell'account aziendale mirata a identificare i punti critici degli utenti"
+        description: "Ricerca UX completa del dashboard dell'account aziendale mirata a identificare i punti critici degli utenti",
+        labelDescription: "Ricerca UX dell'account aziendale"
       },
       healthPad: {
         title: "HealthPad",
-        description: "Un'applicazione mobile auto-iniziata — una cartella sanitaria digitale per tutta la famiglia"
+        description: "Un'applicazione mobile auto-iniziata — una cartella sanitaria digitale per tutta la famiglia",
+        labelDescription: "Applicazione mobile medica"
       },
       vertexStudio: {
         title: "Vertex Studio",
-        description: "Un'identità visiva e concetto di sito web per uno studio creativo, che mostra un approccio moderno ed elegante"
+        description: "Un'identità visiva e concetto di sito web per uno studio creativo, che mostra un approccio moderno ed elegante",
+        labelDescription: "Concept di design"
       },
       rivertonGroup: {
         title: "Riverton Group", 
-        description: "Un redesign completo dell'identità del brand e della landing page, supportato da ricerca UX"
+        description: "Un redesign completo dell'identità del brand e della landing page, supportato da ricerca UX",
+        labelDescription: "Branding, design landing & ricerca UX"
       },
       openKharkiv: {
         title: "Open Kharkiv",
-        description: "Un redesign di un'applicazione mobile di tecnologia civica, migliorando l'usabilità e semplificando i flussi"
+        description: "Un redesign di un'applicazione mobile di tecnologia civica, migliorando l'usabilità e semplificando i flussi",
+        labelDescription: "Redesign app mobile & aggiornamento UX"
       }
     },
     

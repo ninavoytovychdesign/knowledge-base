@@ -171,40 +171,57 @@ const ProjectsGrid = () => {
       {projects.map((project) => (
         <div
           key={project.id}
-          className={`fixed w-[70px] h-[70px] bg-[#141414] rounded-lg hover:scale-105 transition-all duration-300 cursor-pointer z-10 ${project.animation} flex items-center justify-center overflow-hidden ${
-            !isVisible 
-              ? 'opacity-0' 
-              : clickedProject?.id === project.id 
-                ? 'w-[100px] h-[100px] opacity-60 blur-sm'
-                : hoveredProject?.id === project.id 
-                  ? 'opacity-100 blur-none'
-                  : 'opacity-60 blur-[2px]'
-          }`}
+          className="fixed z-10"
           style={{
             top: project.position.top,
             left: project.position.left,
             right: project.position.right,
-            backgroundColor: clickedProject?.id === project.id 
-              ? project.color 
-              : hoveredProject?.id === project.id 
-                ? project.color 
-                : '#141414',
-            backgroundImage: project.logo ? `url(${project.logo})` : 'none',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
           }}
-          onClick={(e) => {
-            if (clickedProject?.id === project.id) {
-              setClickedProject(null);
-            } else {
-              setClickedProject(project);
-              setMousePosition({ x: e.clientX, y: e.clientY });
-            }
-          }}
-          onMouseEnter={() => setHoveredProject(project)}
-          onMouseLeave={() => setHoveredProject(null)}
         >
+          {/* Project Card */}
+          <div
+            className={`bg-[#141414] rounded-lg hover:scale-105 transition-all duration-300 cursor-pointer ${project.animation} flex items-center justify-center overflow-hidden ${
+              !isVisible 
+                ? 'opacity-0' 
+                : clickedProject?.id === project.id 
+                  ? 'w-[100px] h-[100px] opacity-60 blur-sm'
+                  : hoveredProject?.id === project.id 
+                    ? 'w-[70px] h-[70px] opacity-100 blur-none'
+                    : 'w-[70px] h-[70px] opacity-60 blur-[2px]'
+            }`}
+            style={{
+              backgroundColor: clickedProject?.id === project.id 
+                ? project.color 
+                : hoveredProject?.id === project.id 
+                  ? project.color 
+                  : '#141414',
+              backgroundImage: project.logo ? `url(${project.logo})` : 'none',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+            onClick={(e) => {
+              if (clickedProject?.id === project.id) {
+                setClickedProject(null);
+              } else {
+                setClickedProject(project);
+                setMousePosition({ x: e.clientX, y: e.clientY });
+              }
+            }}
+            onMouseEnter={() => setHoveredProject(project)}
+            onMouseLeave={() => setHoveredProject(null)}
+          >
+          </div>
+          
+          {/* Project Label on Hover */}
+          {hoveredProject?.id === project.id && (
+            <div className="absolute top-full left-0 mt-2 px-3 py-2 bg-black/80 backdrop-blur-sm rounded text-white text-[14px] font-helvetica pointer-events-none w-[150px] text-left">
+              <div className="font-medium">{project.title}</div>
+              <div className="text-[12px] opacity-80 mt-1">
+                {t(`projects.${project.key}.labelDescription`)}
+              </div>
+            </div>
+          )}
         </div>
       ))}
       
