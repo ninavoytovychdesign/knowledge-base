@@ -55,7 +55,7 @@ export default function Header() {
 
   return (
     <header className="w-full border-b border-[#1A1A1A] sticky top-0 bg-black/80 backdrop-blur-md z-50">
-      <div className="max-w-[1440px] mx-auto px-12 h-16">
+      <div className="max-w-[1440px] mx-auto px-6 h-16">
         <div className="flex justify-between items-center h-full">
           
           {/* Лого - ліва сторона */}

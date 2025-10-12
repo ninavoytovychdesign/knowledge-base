@@ -30,8 +30,8 @@ export default function About() {
       <main className="py-8">
         {/* Секція про мене */}
         <section className="py-20">
-          <div className="flex justify-center">
-            <div className="flex gap-6 w-[1344px]">
+          <div className="max-w-[1440px] mx-auto px-6">
+            <div className="flex gap-6 w-full">
               {/* Текстовий блок */}
               <div className="w-[600px] flex-shrink-0">
                 <h2 className="text-[24px] font-medium text-textPrimary leading-[120%] mb-8 font-helvetica">

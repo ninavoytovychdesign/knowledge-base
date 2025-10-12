@@ -6,8 +6,10 @@ export default function Contacts() {
   const { t } = useLanguage();
 
   return (
-    <section className="flex justify-center items-center py-20 bg-black">
-      <div className="max-w-[600px] bg-transparent rounded-lg p-10">
+    <section className="py-20 bg-black">
+      <div className="max-w-[1440px] mx-auto px-6">
+        <div className="flex justify-center items-center">
+          <div className="max-w-[600px] bg-transparent rounded-lg p-10">
         <h2 className="text-2xl font-semibold text-textPrimary text-center mb-4 font-helvetica">
           {t('contactTitle')}
         </h2>
@@ -59,6 +61,8 @@ export default function Contacts() {
             </svg>
           </button>
         </form>
+          </div>
+        </div>
       </div>
     </section>
   );
