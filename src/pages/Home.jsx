@@ -4,7 +4,7 @@ import ProjectsGrid from '../components/ProjectsGrid.jsx';
 
 export default function Home() {
   return (
-    <div className="bg-background">
+    <div>
       <Hero />
       <ProjectsGrid />
     </div>
