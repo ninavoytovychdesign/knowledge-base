@@ -1,15 +1,15 @@
 "use client";
-
 import React, { useEffect, useRef } from "react";
 
 export const SparklesCore = ({
   id,
-  background = "transparent",
-  minSize = 0.4,
-  maxSize = 1,
-  particleDensity = 100,
-  className = "",
-  particleColor = "#FFFFFF",
+  background,
+  minSize,
+  maxSize,
+  particleDensity,
+  className,
+  particleColor,
+  particleSpeed = 1,
 }) => {
   const canvasRef = useRef(null);
   const animationRef = useRef(null);
@@ -20,67 +20,89 @@ export const SparklesCore = ({
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
-    const dpr = window.devicePixelRatio || 1;
+    let animationId;
 
     const resizeCanvas = () => {
       const rect = canvas.getBoundingClientRect();
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-      ctx.scale(dpr, dpr);
-      canvas.style.width = `${rect.width}px`;
-      canvas.style.height = `${rect.height}px`;
+      canvas.width = rect.width * window.devicePixelRatio;
+      canvas.height = rect.height * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      canvas.style.width = rect.width + "px";
+      canvas.style.height = rect.height + "px";
     };
 
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    const createParticles = () => {
-      const particles = [];
-      const numParticles = Math.floor((canvas.width * canvas.height * particleDensity) / 10000);
+    // Initialize particles
+    const initParticles = () => {
+      particlesRef.current = [];
+      const rect = canvas.getBoundingClientRect();
+      const particleCount = Math.floor((rect.width * rect.height) / particleDensity);
 
-      for (let i = 0; i < numParticles; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
+      for (let i = 0; i < particleCount; i++) {
+        particlesRef.current.push({
+          x: Math.random() * rect.width,
+          y: Math.random() * rect.height,
           size: Math.random() * (maxSize - minSize) + minSize,
-          speedX: (Math.random() - 0.5) * 0.5,
-          speedY: (Math.random() - 0.5) * 0.5,
+          speedX: (Math.random() - 0.5) * particleSpeed,
+          speedY: (Math.random() - 0.5) * particleSpeed,
           opacity: Math.random() * 0.5 + 0.5,
+          life: Math.random() * 100,
+          maxLife: Math.random() * 100 + 50,
         });
       }
-      return particles;
     };
 
-    particlesRef.current = createParticles();
+    initParticles();
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+      
+      const rect = canvas.getBoundingClientRect();
+      
       particlesRef.current.forEach((particle) => {
+        // Update particle position
         particle.x += particle.speedX;
         particle.y += particle.speedY;
+        particle.life++;
 
-        if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
+        // Reset particle if it goes off screen or dies
+        if (
+          particle.x < 0 ||
+          particle.x > rect.width ||
+          particle.y < 0 ||
+          particle.y > rect.height ||
+          particle.life > particle.maxLife
+        ) {
+          particle.x = Math.random() * rect.width;
+          particle.y = Math.random() * rect.height;
+          particle.life = 0;
+          particle.maxLife = Math.random() * 100 + 50;
+        }
 
+        // Draw particle
+        ctx.save();
+        ctx.globalAlpha = particle.opacity;
+        ctx.fillStyle = particleColor;
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `${particleColor}${Math.floor(particle.opacity * 255).toString(16).padStart(2, '0')}`;
         ctx.fill();
+        ctx.restore();
       });
 
-      animationRef.current = requestAnimationFrame(animate);
+      animationId = requestAnimationFrame(animate);
     };
 
     animate();
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
+      if (animationId) {
+        cancelAnimationFrame(animationId);
       }
     };
-  }, [minSize, maxSize, particleDensity, particleColor]);
+  }, [minSize, maxSize, particleDensity, particleColor, particleSpeed]);
 
   return (
     <canvas
@@ -90,5 +112,3 @@ export const SparklesCore = ({
     />
   );
 };
-
-

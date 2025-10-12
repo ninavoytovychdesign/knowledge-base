@@ -9,40 +9,31 @@ const ProjectsGrid = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const { t } = useLanguage();
 
-  // Calculate modal position 32px from card, always within screen bounds
+  // Calculate modal position aligned to the right edge and centered vertically
   const getModalPosition = () => {
-    if (!clickedProject) return { left: 0, top: 0 };
+    if (!clickedProject) return { right: 0, top: 0 };
     
-    const modalWidth = 300;
-    const modalHeight = 500;
-    const offset = 32;
-    const cardSize = clickedProject?.id === clickedProject?.id ? 100 : 70; // Card size on click
-    const screenPadding = 20; // Minimum distance from screen edges
-    const headerHeight = 80; // Approximate header height
-    const footerHeight = 60; // Approximate footer height
+    // Position modal aligned with Behance icon in footer
+    const modalWidth = 400;
+    const modalHeight = 800;
+    const footerPadding = 24; // px-6 = 24px padding in footer
     
-    // Get card center position
-    const cardCenterX = mousePosition.x;
-    const cardCenterY = mousePosition.y;
+    // Calculate right position to align with Behance icon
+    // Footer has max-w-[1440px] mx-auto px-6, so we need to account for this
+    const maxWidth = 1440;
+    const screenWidth = window.innerWidth;
+    const actualPadding = screenWidth > maxWidth ? (screenWidth - maxWidth) / 2 + footerPadding : footerPadding;
     
-    // Try positioning modal to the right of the card first
-    let left = cardCenterX + (cardSize / 2) + offset;
-    let top = cardCenterY - (modalHeight / 2);
+    let right = actualPadding;
     
-    // Check if modal fits on the right side
-    if (left + modalWidth > window.innerWidth - screenPadding) {
-      // Try left side
-      left = cardCenterX - (cardSize / 2) - modalWidth - offset;
-    }
+    // Center modal vertically on screen
+    let top = (window.innerHeight - modalHeight) / 2;
     
-    // If still doesn't fit on left, position with screen padding
-    if (left < screenPadding) {
-      left = screenPadding;
-    }
-    
-    // Ensure modal fits vertically and doesn't overlap header/footer
-    const minTop = headerHeight + screenPadding;
-    const maxTop = window.innerHeight - footerHeight - modalHeight - screenPadding;
+    // Ensure modal doesn't go above header or below footer
+    const headerHeight = 64; // Header height
+    const footerHeight = 64; // Footer height
+    const minTop = headerHeight;
+    const maxTop = window.innerHeight - footerHeight - modalHeight;
     
     if (top < minTop) {
       top = minTop;
@@ -50,45 +41,7 @@ const ProjectsGrid = () => {
       top = maxTop;
     }
     
-    // Final check: if modal is too close to card horizontally, move it away
-    const modalRight = left + modalWidth;
-    const modalLeft = left;
-    const cardLeft = cardCenterX - (cardSize / 2);
-    const cardRight = cardCenterX + (cardSize / 2);
-    
-    // If modal overlaps with card horizontally, adjust position
-    if ((modalLeft < cardRight + offset && modalRight > cardLeft - offset)) {
-      // Try to position below the card
-      const belowTop = cardCenterY + (cardSize / 2) + offset;
-      if (belowTop + modalHeight < window.innerHeight - footerHeight - screenPadding) {
-        top = belowTop;
-        left = cardCenterX - (modalWidth / 2);
-        
-        // Ensure horizontal centering doesn't go off screen
-        if (left < screenPadding) left = screenPadding;
-        if (left + modalWidth > window.innerWidth - screenPadding) {
-          left = window.innerWidth - modalWidth - screenPadding;
-        }
-      } else {
-        // Position above the card
-        const aboveTop = cardCenterY - (cardSize / 2) - modalHeight - offset;
-        if (aboveTop > headerHeight + screenPadding) {
-          top = aboveTop;
-          left = cardCenterX - (modalWidth / 2);
-          
-          // Ensure horizontal centering doesn't go off screen
-          if (left < screenPadding) left = screenPadding;
-          if (left + modalWidth > window.innerWidth - screenPadding) {
-            left = window.innerWidth - modalWidth - screenPadding;
-          }
-        } else {
-          // If neither above nor below fits, keep within safe area
-          top = Math.max(minTop, Math.min(maxTop, top));
-        }
-      }
-    }
-    
-    return { left, top };
+    return { right, top };
   };
 
   useEffect(() => {
@@ -101,101 +54,122 @@ const ProjectsGrid = () => {
   }, []);
 
   const projects = [
-    // Картки над заголовком
+    // Картки під заголовком
     {
       id: 1,
       key: 'novaPost',
-      position: { top: '15%', left: '25%' },
+      position: { top: '40%', left: '32%' },
+      mobilePosition: { top: '40%', left: '10%' },
       animation: 'float-1',
       letter: 'N',
       title: 'Nova Post',
       description: 'Comprehensive UX research of the business account dashboard aimed at identifying user pain points',
       mockups: ['/mockups/novapost-mockup.png'],
-      logo: '/logos/novapost-logo.png',
+      logo: '/logos/nova-logo.png',
+      hoverLogo: '/logos/novapost-logo.png',
       color: '#DA292B'
     },
     {
       id: 2,
       key: 'healthPad',
-      position: { top: '20%', right: '25%' },
+      position: { top: '42.5%', left: '70%', transform: 'translateX(-50%)' },
+      mobilePosition: { top: '45%', right: '10%' },
       animation: 'float-2',
       letter: 'H',
       title: 'HealthPad',
       description: 'A self-initiated mobile application — a digital health record for the whole family',
       mockups: ['/mockups/healthpad-mockup.png'],
-      logo: '/logos/healthpad-logo.png',
+      logo: '/logos/health-logo.png',
+      hoverLogo: '/logos/healthpad-logo.png',
       color: '#11B6E2'
     },
-    // Картки під заголовком
+    // Інші картки
     {
       id: 3,
       key: 'vertexStudio',
-      position: { top: '65%', left: '15%' },
+      position: { top: '50%', left: '15%' },
+      mobilePosition: { top: '50%', left: '10%' },
       animation: 'float-3',
       letter: 'V',
       title: 'Vertex Studio',
       description: 'A visual identity and website concept for a creative studio, showcasing a modern and elegant approach',
       mockups: ['/mockups/vertex.png'],
-      logo: '/logos/vertex-logo.png',
+      logo: '/logos/vert-logo.png',
+      hoverLogo: '/logos/vertex-logo.png',
       color: '#3EA3A9'
     },
     {
       id: 4,
       key: 'rivertonGroup',
-      position: { top: '75%', left: '45%' },
+      position: { top: '60%', left: '50%', transform: 'translateX(-50%)' },
+      mobilePosition: { top: '60%', left: '50%' },
       animation: 'float-4',
       letter: 'R',
       title: 'Riverton Group',
       description: 'A complete redesign of the brand identity and landing page, supported by UX research',
-      mockups: ['/mockups/riverton-mockup.png'],
-      logo: '/logos/riverton-logo.png',
+      mockups: ['/mockups/rivertong-mockup.png?v=2'],
+      logo: '/logos/rivertongroup-logo.png',
+      hoverLogo: '/logos/riverton-logo.png',
       color: '#103FD3'
     },
     {
       id: 5,
       key: 'openKharkiv',
-      position: { top: '70%', right: '20%' },
+      position: { top: '50%', right: '10%' },
+      mobilePosition: { top: '55%', right: '10%' },
       animation: 'float-5',
       letter: 'O',
       title: 'Open Kharkiv',
       description: 'A redesign of a civic technology mobile application, improving usability, streamlining flows',
       mockups: ['/mockups/openkharkiv11.png'],
-      logo: '/logos/openkharkiv-logo.png',
+      logo: '/logos/open-logo.png',
+      hoverLogo: '/logos/openkharkiv-logo.png',
       color: '#19A05C'
     }
   ];
 
   return (
     <>
-      {/* Floating cards positioned absolutely */}
-      {projects.map((project) => (
-        <div
-          key={project.id}
-          className="fixed z-10"
-          style={{
-            top: project.position.top,
-            left: project.position.left,
-            right: project.position.right,
-          }}
-        >
+         {/* Floating cards positioned absolutely */}
+         {projects.map((project) => {
+           const isMobile = window.innerWidth < 768;
+           const position = isMobile ? project.mobilePosition : project.position;
+           
+           return (
+             <div
+               key={project.id}
+               className={`fixed z-10 ${project.animation}`}
+               style={{
+                 top: position.top,
+                 left: position.left,
+                 right: position.right,
+                 transform: position.transform || 'none',
+               }}
+             >
           {/* Project Card */}
           <div
-            className={`bg-[#141414] rounded-lg hover:scale-105 transition-all duration-300 cursor-pointer ${project.animation} flex items-center justify-center overflow-hidden ${
+            className={`rounded-lg hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 cursor-pointer flex items-center justify-center overflow-hidden ${
               !isVisible 
                 ? 'opacity-0' 
                 : clickedProject?.id === project.id 
-                  ? 'w-[100px] h-[100px] opacity-60 blur-sm'
+                  ? 'w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] blur-sm bg-[#141414]/60'
                   : hoveredProject?.id === project.id 
-                    ? 'w-[70px] h-[70px] opacity-100 blur-none'
-                    : 'w-[70px] h-[70px] opacity-60 blur-[2px]'
+                    ? 'w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] blur-none bg-[#141414]/100'
+                    : 'w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] bg-[#141414]/60'
             }`}
             style={{
               backgroundColor: clickedProject?.id === project.id 
                 ? project.color 
                 : hoveredProject?.id === project.id 
-                  ? project.color 
+                  ? '#141414'
                   : '#141414',
-              backgroundImage: project.logo ? `url(${project.logo})` : 'none',
+              backgroundImage: `url(${
+                clickedProject?.id === project.id
+                  ? project.logo
+                  : hoveredProject?.id === project.id
+                    ? project.hoverLogo
+                    : project.logo
+              })`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
@@ -213,17 +187,19 @@ const ProjectsGrid = () => {
           >
           </div>
           
-          {/* Project Label on Hover */}
-          {hoveredProject?.id === project.id && (
-            <div className="absolute top-full left-0 mt-2 px-3 py-2 bg-black/80 backdrop-blur-sm rounded text-white text-[14px] font-helvetica pointer-events-none w-[150px] text-left">
-              <div className="font-medium">{project.title}</div>
+          {/* Project Label - Always Visible */}
+          <div className="relative mt-2 px-0 py-2 text-white text-[12px] sm:text-[14px] font-helvetica pointer-events-none w-[120px] sm:w-[150px] text-left">
+            <div className="font-medium font-helvetica">{project.title}</div>
+            {/* Description appears on hover */}
+            {hoveredProject?.id === project.id && (
               <div className="text-[12px] opacity-80 mt-1">
                 {t(`projects.${project.key}.labelDescription`)}
               </div>
-            </div>
-          )}
-        </div>
-      ))}
+            )}
+          </div>
+           </div>
+         );
+       })}
       
       {/* Blur background overlay */}
       {clickedProject && (
@@ -240,25 +216,36 @@ const ProjectsGrid = () => {
           style={getModalPosition()}
           onClick={(e) => e.stopPropagation()}
         >
-            <div className="bg-[#141414] rounded-lg p-4 shadow-2xl w-[300px] h-[550px] backdrop-blur-sm">
+                 <div className="bg-[#141414]/30 border border-[#1A1A1A] rounded-lg p-3 sm:p-4 shadow-2xl w-[280px] sm:w-[400px] h-[800px] backdrop-blur-sm">
              {clickedProject.title === 'Open Kharkiv' || clickedProject.title === 'HealthPad' ? (
                /* Open Kharkiv - Auto Layout Container */
                <div className="flex flex-col h-full">
-                 {/* Logo at the top */}
-                 {clickedProject.logo && (
-                   <div className="flex justify-start mb-4">
+                 {/* Logo and UI Badge at the top */}
+                 <div className="flex justify-between items-center mb-4">
+                   {clickedProject.hoverLogo && (
                      <div className="w-10 h-10 rounded overflow-hidden">
                        <img
-                         src={clickedProject.logo}
+                         src={clickedProject.hoverLogo}
                          alt={`${clickedProject.title} logo`}
                          className="w-full h-full object-cover"
                        />
                      </div>
-                   </div>
-                 )}
+                   )}
+                   
+                   {/* UI Badge for Vertex Studio */}
+                   {clickedProject.title === 'Vertex Studio' && (
+                     <div className="relative">
+                       <img 
+                         src="/logos/flag-logo.svg" 
+                         alt="UI Badge" 
+                         className="w-6 h-10"
+                       />
+                     </div>
+                   )}
+                 </div>
                  
                  {/* Title */}
-                 <h3 className="text-white text-[18px] font-medium font-helvetica mb-4 text-left">
+                 <h3 className="text-white text-[16px] sm:text-[18px] font-medium font-helvetica mb-4 text-left">
                    {clickedProject.title}
                  </h3>
                  
@@ -272,15 +259,15 @@ const ProjectsGrid = () => {
                       e.target.style.display = 'none';
                     }}
                   />
-                 </div>
+                </div>
                 
-                {/* Description */}
-                <p className="text-[#CCCCCC] text-[14px] font-helvetica leading-[140%] mb-6">
+                 {/* Description */}
+                 <p className="text-[#CCCCCC] text-[12px] sm:text-[14px] font-helvetica leading-[140%] mb-6">
                    {t(`projects.${clickedProject.key}.description`)}
                 </p>
                 
-                {/* View Project Button */}
-                <button className="w-full flex items-center justify-between px-4 py-2 rounded-lg font-medium text-black bg-gradient-accent hover:opacity-90 transition">
+                 {/* View Project Button */}
+                 <button className="w-full flex items-center justify-between px-3 sm:px-4 py-2 rounded-lg font-medium text-black bg-white hover:opacity-90 transition font-helvetica text-[12px] sm:text-[14px]">
                   <span>{t('viewMore')}</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -290,21 +277,32 @@ const ProjectsGrid = () => {
              ) : (
                /* Other Projects - Original Layout */
                <div className="flex flex-col h-full">
-                 {/* Logo at the top */}
-                 {clickedProject.logo && (
-                   <div className="flex justify-start mb-4">
+                 {/* Logo and UI Badge at the top */}
+                 <div className="flex justify-between items-center mb-4">
+                   {clickedProject.hoverLogo && (
                      <div className="w-10 h-10 rounded overflow-hidden">
                        <img
-                         src={clickedProject.logo}
+                         src={clickedProject.hoverLogo}
                          alt={`${clickedProject.title} logo`}
                          className="w-full h-full object-cover"
                        />
                      </div>
-                   </div>
-                 )}
+                   )}
+                   
+                   {/* UI Badge for Vertex Studio */}
+                   {clickedProject.title === 'Vertex Studio' && (
+                     <div className="relative">
+                       <img 
+                         src="/logos/flag-logo.svg" 
+                         alt="UI Badge" 
+                         className="w-6 h-10"
+                       />
+                     </div>
+                   )}
+                 </div>
                  
                  {/* Title */}
-                 <h3 className="text-white text-[18px] font-medium font-helvetica mb-4 text-left">
+                 <h3 className="text-white text-[16px] sm:text-[18px] font-medium font-helvetica mb-4 text-left">
                    {clickedProject.title}
                  </h3>
                  
@@ -313,20 +311,20 @@ const ProjectsGrid = () => {
                   <img
                     src={clickedProject.mockups[0]}
                     alt={`${clickedProject.title} mockup`}
-                    className="w-full h-full object-cover transform rotate-0"
+                    className="w-full h-auto object-contain scale-75"
                     onError={(e) => {
                       e.target.style.display = 'none';
                     }}
                   />
                 </div>
 
-                {/* Description */}
-                <p className="text-[#CCCCCC] text-[14px] font-helvetica leading-[140%] mb-6">
+                 {/* Description */}
+                 <p className="text-[#CCCCCC] text-[12px] sm:text-[14px] font-helvetica leading-[140%] mb-6">
                    {t(`projects.${clickedProject.key}.description`)}
                 </p>
                 
-                {/* View Project Button */}
-                <button className="w-full flex items-center justify-between px-4 py-2 rounded-lg font-medium text-black bg-gradient-accent hover:opacity-90 transition">
+                 {/* View Project Button */}
+                 <button className="w-full flex items-center justify-between px-3 sm:px-4 py-2 rounded-lg font-medium text-black bg-white hover:opacity-90 transition font-helvetica text-[12px] sm:text-[14px]">
                   <span>{t('viewMore')}</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

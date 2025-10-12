@@ -10,6 +10,7 @@ module.exports = {
         'poppins': ['Poppins', 'sans-serif'],
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
         'helvetica': ['Helvetica', 'Arial', 'sans-serif'],
+        'montserrat-subrayada': ['Montserrat Subrayada', 'cursive'],
       },
       colors: {
         // Brand colors
