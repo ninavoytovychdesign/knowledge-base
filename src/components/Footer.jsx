@@ -6,7 +6,7 @@ const Footer = () => {
   const { t } = useLanguage();
   return (
     <footer className="w-full bg-black border-t border-[#1A1A1A] py-6 text-sm text-textSecondary">
-      <div className="max-w-screen-xl mx-auto px-12 flex justify-between items-center">
+      <div className="max-w-screen-xl mx-auto px-[48px] flex justify-between items-center">
         {/* Копірайт - ліва сторона */}
         <div className="text-left">
           <span>{t('footerText')} • </span>
