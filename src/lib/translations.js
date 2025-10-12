@@ -6,11 +6,11 @@ export const translations = {
     contacts: "Contacts",
     
     // Hero Section
-    heroTitle: "I'm Nina Voytovych — a UI/UX designer crafting clear, elegant and human-centered digital experiences.",
-    heroTitleHighlight: "I'm Nina Voytovych — a UI/UX designer",
-    heroTitleLine2: "crafting clear, elegant and human-centered",
-    heroTitleLine3: "digital experiences.",
-    heroSubtitle: "Focused on SaaS, fintech and civic tech, I blend art direction with UX strategy to create products that are both beautiful and meaningful.",
+    heroTitle: "Nina Voytovych — UI/UX designer shaping digital products through clarity, empathy, and precision.",
+    heroTitleHighlight: "Nina Voytovych — UI/UX designer",
+    heroTitleLine2: "shaping digital products through clarity, empathy, and precision",
+    heroTitleLine3: "",
+    heroSubtitle: "",
     
     // Projects
     projects: {
@@ -78,11 +78,11 @@ export const translations = {
     contacts: "Контакти",
     
     // Hero Section
-    heroTitle: "Я Ніна Войтович — UI/UX дизайнер, що створює зрозумілі, елегантні та орієнтовані на людину цифрові рішення.",
-    heroTitleHighlight: "Я Ніна Войтович — UI/UX дизайнер",
-    heroTitleLine2: "що створює зрозумілі, елегантні та орієнтовані на людину",
-    heroTitleLine3: "цифрові рішення.",
-    heroSubtitle: "Зосереджена на SaaS, фінтех та громадських технологіях, я поєдную арт-дирекшн з UX стратегією для створення продуктів, які є одночасно красивими та значущими.",
+    heroTitle: "Ніна Войтович — UI/UX дизайнер, що формує цифрові продукти через ясність, емпатію та точність.",
+    heroTitleHighlight: "Ніна Войтович — UI/UX дизайнер",
+    heroTitleLine2: "що формує цифрові продукти через ясність, емпатію та точність.",
+    heroTitleLine3: "",
+    heroSubtitle: "",
     
     // Projects
     projects: {
@@ -150,11 +150,11 @@ export const translations = {
     contacts: "Contatti",
     
     // Hero Section
-    heroTitle: "Sono Nina Voytovych — una UI/UX designer che crea esperienze digitali chiare, eleganti e centrate sull'uomo.",
-    heroTitleHighlight: "Sono Nina Voytovych — una UI/UX designer",
-    heroTitleLine2: "che crea esperienze digitali chiare, eleganti",
-    heroTitleLine3: "e centrate sull'uomo.",
-    heroSubtitle: "Focalizzata su SaaS, fintech e civic tech, unisco direzione artistica con strategia UX per creare prodotti che sono sia belli che significativi.",
+    heroTitle: "Nina Voytovych — UI/UX designer che plasma prodotti digitali attraverso chiarezza, empatia e precisione.",
+    heroTitleHighlight: "Nina Voytovych — UI/UX designer",
+    heroTitleLine2: "che plasma prodotti digitali attraverso chiarezza, empatia e precisione.",
+    heroTitleLine3: "",
+    heroSubtitle: "",
     
     // Projects
     projects: {

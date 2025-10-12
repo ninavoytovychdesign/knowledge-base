@@ -60,8 +60,8 @@ export default function Header() {
           
           {/* Лого - ліва сторона */}
           <div className="text-[22px] font-medium font-helvetica">
-            <span className="text-textPrimary">Nina </span>
-            <span className="text-white">Voytovych</span>
+            <span className="text-textPrimary">N</span>
+            <span className="text-white">V</span>
           </div>
 
           {/* Перемикач мов та навігація - права сторона */}

@@ -78,15 +78,47 @@ module.exports = {
           'opacity': '1',
         },
         
-        // Keyframe animations
-        '@keyframes spin': {
-          'from': {
-            'transform': 'rotate(0deg)',
-          },
-          'to': {
-            'transform': 'rotate(360deg)',
-          },
-        },
+               // Keyframe animations
+               '@keyframes spin': {
+                 'from': {
+                   'transform': 'rotate(0deg)',
+                 },
+                 'to': {
+                   'transform': 'rotate(360deg)',
+                 },
+               },
+               
+               '@keyframes float-slow': {
+                 '0%': {
+                   'background-position': '0% 50%',
+                   'filter': 'hue-rotate(0deg) brightness(1) saturate(1)',
+                   'transform': 'scale(1) rotate(0deg)',
+                 },
+                 '25%': {
+                   'background-position': '50% 30%',
+                   'filter': 'hue-rotate(15deg) brightness(1.1) saturate(1.1)',
+                   'transform': 'scale(1.05) rotate(1deg)',
+                 },
+                 '50%': {
+                   'background-position': '100% 50%',
+                   'filter': 'hue-rotate(30deg) brightness(0.9) saturate(0.9)',
+                   'transform': 'scale(0.95) rotate(-0.5deg)',
+                 },
+                 '75%': {
+                   'background-position': '50% 70%',
+                   'filter': 'hue-rotate(45deg) brightness(1.05) saturate(1.05)',
+                   'transform': 'scale(1.02) rotate(0.8deg)',
+                 },
+                 '100%': {
+                   'background-position': '0% 50%',
+                   'filter': 'hue-rotate(0deg) brightness(1) saturate(1)',
+                   'transform': 'scale(1) rotate(0deg)',
+                 },
+               },
+               
+               '.animate-float-slow': {
+                 'animation': 'float-slow 25s ease-in-out infinite',
+               },
         
         // Custom duration for certificate hover effect
         '.duration-400': {

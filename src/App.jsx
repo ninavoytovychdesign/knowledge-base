@@ -45,7 +45,7 @@ function AppContent() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col">
       <Header />
       <div className="flex-grow">
         <Routes>
