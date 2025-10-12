@@ -4,6 +4,8 @@ import { Spotlight } from "../components/ui/spotlight";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Contacts() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [lettersVisible, setLettersVisible] = useState([]);
@@ -54,6 +56,8 @@ export default function Contacts() {
     // Повертаємо форму до початкового стану через 3 секунди
     setTimeout(() => {
       setIsSubmitted(false);
+      setName("");
+      setEmail("");
       setMessage("");
     }, 3000);
   };
@@ -78,6 +82,8 @@ export default function Contacts() {
               <input
                 type="text"
                 placeholder={t('namePlaceholder')}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full bg-[#141414]/30 text-[#E6E6E6] placeholder-[#777777] placeholder:text-sm placeholder:font-normal rounded-lg px-3 sm:px-4 py-3 focus:outline-none border border-[#1A1A1A] hover:border-[#1A1A1A] hover:bg-[#1A1A1A]/40 transition-all duration-300 font-helvetica"
                 disabled={isSubmitted}
               />
