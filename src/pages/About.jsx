@@ -26,7 +26,7 @@ export default function About() {
     setMousePosition({ x: 0, y: 0 });
   };
   return (
-    <div>
+    <div className="bg-background">
       <main className="py-8">
         {/* Секція про мене */}
         <section className="py-20">
