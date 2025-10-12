@@ -1,4 +1,3 @@
-import { FaBehance, FaLinkedin } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { useLanguage } from "../lib/LanguageContext";
@@ -135,22 +134,6 @@ export default function Header() {
             </div>
           </div>
 
-          <a 
-            href="https://www.behance.net/ninavoytovych" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-6 h-6 flex items-center justify-center"
-          >
-            <FaBehance className="w-6 h-6 text-textPrimary hover:text-textSecondary transition-colors duration-300" />
-          </a>
-          <a 
-            href="https://www.linkedin.com/in/nina-voytovych/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-6 h-6 flex items-center justify-center"
-          >
-            <FaLinkedin className="w-6 h-6 text-textPrimary hover:text-textSecondary transition-colors duration-300" />
-          </a>
           </div>
         </div>
       </div>
