@@ -46,31 +46,6 @@ code {
   transition: all 1.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Scroll-based card animations */
-@keyframes clockwiseRotation {
-  from {
-    transform: rotate(0deg) scale(1);
-  }
-  to {
-    transform: rotate(360deg) scale(1.3);
-  }
-}
-
-@keyframes cardPulse {
-  0%, 100% {
-    opacity: 0.6;
-    filter: blur(2px);
-  }
-  50% {
-    opacity: 0.8;
-    filter: blur(1px);
-  }
-}
-
-.scroll-animated-card {
-  animation: clockwiseRotation 2s ease-in-out, cardPulse 1.5s ease-in-out;
-}
-
 /* Cursor Glow Effect */
 .cursor-glow {
   position: fixed;

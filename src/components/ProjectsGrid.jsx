@@ -7,8 +7,6 @@ const ProjectsGrid = () => {
   const [clickedProject, setClickedProject] = useState(null);
   const [hoveredProject, setHoveredProject] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [animatedCards, setAnimatedCards] = useState(new Set());
   const { t } = useLanguage();
 
   // Calculate modal position 32px from card, always within screen bounds
@@ -102,31 +100,6 @@ const ProjectsGrid = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Scroll animation effect
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      
-      // Calculate scroll progress (0 to 1)
-      const progress = Math.min(scrollY / (documentHeight - windowHeight), 1);
-      setScrollProgress(progress);
-      
-      // Trigger card animations based on scroll progress
-      const cardAnimationThresholds = [0.1, 0.25, 0.4, 0.55, 0.7]; // Thresholds for each card
-      
-      cardAnimationThresholds.forEach((threshold, index) => {
-        if (progress >= threshold && !animatedCards.has(index)) {
-          setAnimatedCards(prev => new Set([...prev, index]));
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [animatedCards]);
-
   const projects = [
     // Картки над заголовком
     {
@@ -207,36 +180,25 @@ const ProjectsGrid = () => {
         >
           {/* Project Card */}
           <div
-            className={`bg-[#141414] rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer ${project.animation} flex items-center justify-center overflow-hidden ${
+            className={`bg-[#141414] rounded-lg hover:scale-105 transition-all duration-300 cursor-pointer ${project.animation} flex items-center justify-center overflow-hidden ${
               !isVisible 
                 ? 'opacity-0' 
                 : clickedProject?.id === project.id 
                   ? 'w-[100px] h-[100px] opacity-60 blur-sm'
                   : hoveredProject?.id === project.id 
                     ? 'w-[70px] h-[70px] opacity-100 blur-none'
-                    : animatedCards.has(project.id - 1)
-                      ? 'w-[90px] h-[90px] opacity-80 blur-[1px]'
-                      : 'w-[70px] h-[70px] opacity-60 blur-[2px]'
+                    : 'w-[70px] h-[70px] opacity-60 blur-[2px]'
             }`}
             style={{
               backgroundColor: clickedProject?.id === project.id 
                 ? project.color 
                 : hoveredProject?.id === project.id 
                   ? project.color 
-                  : animatedCards.has(project.id - 1)
-                    ? project.color
-                    : '#141414',
+                  : '#141414',
               backgroundImage: project.logo ? `url(${project.logo})` : 'none',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
-              transform: animatedCards.has(project.id - 1) 
-                ? `rotate(${(scrollProgress - (project.id - 1) * 0.15) * 360}deg) scale(${1 + (scrollProgress - (project.id - 1) * 0.15) * 0.4})` 
-                : 'rotate(0deg) scale(1)',
-              transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-              filter: animatedCards.has(project.id - 1) 
-                ? `blur(${2 - (scrollProgress - (project.id - 1) * 0.15) * 1.5}px)` 
-                : 'blur(2px)',
             }}
             onClick={(e) => {
               if (clickedProject?.id === project.id) {
