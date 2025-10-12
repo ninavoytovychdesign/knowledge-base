@@ -140,4 +140,24 @@ code {
 .animate-float-3 { animation: cert-float-3 3.5s ease-in-out infinite; animation-delay: 1s; }
 .animate-float-4 { animation: cert-float-4 2.8s ease-in-out infinite; animation-delay: 1.5s; }
 
+/* Card shine animation */
+@keyframes card-shine {
+  0% { transform: translateX(-20%); opacity: 0; }
+  30% { opacity: .5; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+
+.card-shine::after{
+  content:"";
+  position:absolute; inset:-1px; border-radius:16px;
+  background: linear-gradient(120deg, rgba(182,202,251,.25), rgba(189,179,255,.25));
+  filter: blur(10px);
+  opacity: 0; transform: translateX(-20%);
+  transition: opacity .3s ease;
+}
+
+.group:hover .card-shine::after{
+  animation: card-shine 1.8s ease-out forwards;
+}
+
 

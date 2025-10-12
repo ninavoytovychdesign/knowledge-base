@@ -55,11 +55,11 @@ export const translations = {
     
     // About Page
     aboutTitle: "About Me",
-    aboutText1: "I'm Nina Voytovych, a UI/UX designer based in Fano, Italy. My path into design started with a love for art and composition, and today I combine that creative background with a sharp focus on usability and user needs.",
-    aboutText2: "I graduated from the Academy of Arts with a Master's degree in Design, which gave me a strong background in composition and color theory. Over the last years, I've worked on diverse projects — from e-commerce redesigns and landing pages to UX research for digital products and even investment dashboards under NDA. I enjoy the challenge of turning complex ideas into designs that feel effortless, clear, and visually engaging.",
-    aboutText3: "Collaboration is at the heart of how I work: I stay close to both users and developers, presenting solutions, refining details, and making sure the final product delivers real value. My recent case studies (like Riverton Group and Vertex Studio) reflect this mix of creativity and practicality.",
-    aboutText4: "Outside of work, I'm constantly exploring — from experimenting with AI-powered tools for design to diving into books, traveling, photography, and everyday details that spark inspiration.",
-    aboutText5: "For me, design isn't just about pixels on a screen — it's about creating experiences that make people's lives a little easier and a little more beautiful.",
+    aboutText1: "I'm Nina Voytovych, a UI/UX designer based in Italy.",
+    aboutText2: "With a background in art and a passion for user-centered design, I craft products that combine functionality, emotion, and visual clarity.",
+    aboutText3: "My work spans SaaS platforms, civic tech, and e-commerce — blending research, clean aesthetics, and attention to detail.",
+    aboutText4: "Beyond design, I explore how AI and code can empower creative processes and make design smarter.",
+    aboutText5: "",
     podcastGuest: "Podcast Guest",
     listenOnSpotify: "Listen on Spotify",
     certificates: "My Certificates",
@@ -127,11 +127,11 @@ export const translations = {
     
     // About Page
     aboutTitle: "Про мене",
-    aboutText1: "Я Ніна Войтович, UI/UX дизайнер з Фано, Італія. Мій шлях у дизайн почався з любові до мистецтва та композиції, і сьогодні я поєдную цей творчий досвід з гострим фокусом на зручності та потребах користувачів.",
-    aboutText2: "Я закінчила Академію мистецтв з магістерським ступенем з дизайну, що дало мені міцну основу в композиції та теорії кольору. Протягом останніх років я працювала над різноманітними проектами — від редизайну електронної комерції та лендингових сторінок до UX досліджень цифрових продуктів і навіть інвестиційних панелей під NDA. Мені подобається виклик перетворення складних ідей у дизайни, які відчуваються невимушеними, зрозумілими та візуально привабливими.",
-    aboutText3: "Співпраця — це основа того, як я працюю: я тримаюся близько до користувачів і розробників, представляю рішення, удосконалюю деталі та переконуюся, що кінцевий продукт приносить реальну цінність. Мої останні кейс-стаді (як Riverton Group та Vertex Studio) відображають це поєднання творчості та практичності.",
-    aboutText4: "Поза роботою я постійно досліджую — від експериментів з AI-інструментами для дизайну до занурення в книги, подорожі, фотографію та повсякденні деталі, які надихають.",
-    aboutText5: "Для мене дизайн — це не просто пікселі на екрані — це створення досвіду, який робить життя людей трохи легшим і трохи красивішим.",
+    aboutText1: "Я Ніна Войтович, UI/UX дизайнер з Італії.",
+    aboutText2: "З досвідом у мистецтві та пристрастю до дизайну, орієнтованого на користувача, я створюю продукти, що поєднують функціональність, емоції та візуальну ясність.",
+    aboutText3: "Моя робота охоплює SaaS платформи, громадські технології та електронну комерцію — поєднуючи дослідження, чисті естетичні рішення та увагу до деталей.",
+    aboutText4: "Поза дизайном я досліджую, як штучний інтелект та код можуть розширити творчі процеси та зробити дизайн розумнішим.",
+    aboutText5: "",
     podcastGuest: "Гість подкасту",
     listenOnSpotify: "Слухати на Spotify",
     certificates: "Мої сертифікати",

@@ -90,29 +90,34 @@ module.exports = {
                
                '@keyframes float-slow': {
                  '0%': {
-                   'background-position': '0% 50%',
+                   'background-position': '0% 0%',
                    'filter': 'hue-rotate(0deg) brightness(1) saturate(1)',
-                   'transform': 'scale(1) rotate(0deg)',
+                   'transform': 'scale(1) rotate(0deg) translate(0%, 0%)',
                  },
-                 '25%': {
-                   'background-position': '50% 30%',
-                   'filter': 'hue-rotate(15deg) brightness(1.1) saturate(1.1)',
-                   'transform': 'scale(1.05) rotate(1deg)',
+                 '20%': {
+                   'background-position': '20% 10%',
+                   'filter': 'hue-rotate(20deg) brightness(1.1) saturate(1.05)',
+                   'transform': 'scale(1.02) rotate(0.5deg) translate(-1%, 1%)',
                  },
-                 '50%': {
-                   'background-position': '100% 50%',
-                   'filter': 'hue-rotate(30deg) brightness(0.9) saturate(0.9)',
-                   'transform': 'scale(0.95) rotate(-0.5deg)',
+                 '40%': {
+                   'background-position': '40% 20%',
+                   'filter': 'hue-rotate(40deg) brightness(0.95) saturate(0.95)',
+                   'transform': 'scale(0.98) rotate(-0.3deg) translate(1%, -1%)',
                  },
-                 '75%': {
-                   'background-position': '50% 70%',
-                   'filter': 'hue-rotate(45deg) brightness(1.05) saturate(1.05)',
-                   'transform': 'scale(1.02) rotate(0.8deg)',
+                 '60%': {
+                   'background-position': '60% 10%',
+                   'filter': 'hue-rotate(60deg) brightness(1.05) saturate(1.1)',
+                   'transform': 'scale(1.01) rotate(0.8deg) translate(-0.5%, 0.5%)',
+                 },
+                 '80%': {
+                   'background-position': '80% 0%',
+                   'filter': 'hue-rotate(80deg) brightness(0.9) saturate(0.9)',
+                   'transform': 'scale(0.99) rotate(-0.2deg) translate(0.5%, -0.5%)',
                  },
                  '100%': {
-                   'background-position': '0% 50%',
+                   'background-position': '0% 0%',
                    'filter': 'hue-rotate(0deg) brightness(1) saturate(1)',
-                   'transform': 'scale(1) rotate(0deg)',
+                   'transform': 'scale(1) rotate(0deg) translate(0%, 0%)',
                  },
                },
                

@@ -17,7 +17,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center h-[800px]">
+    <section className="relative flex flex-col items-center justify-center h-[800px] bg-black">
       {/* Контент */}
       <div className="text-center max-w-[880px] px-6">
         <h1 className={`text-[28px] font-medium text-textPrimary leading-[130%] font-helvetica transition-all duration-1000 ease-out ${
