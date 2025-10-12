@@ -94,6 +94,8 @@ export default function Contacts() {
               <input
                 type="email"
                 placeholder={t('emailPlaceholder')}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-[#141414]/30 text-[#E6E6E6] placeholder-[#777777] placeholder:text-sm placeholder:font-normal rounded-lg px-3 sm:px-4 py-3 focus:outline-none border border-[#1A1A1A] hover:border-[#1A1A1A] hover:bg-[#1A1A1A]/40 transition-all duration-300 font-helvetica"
                 disabled={isSubmitted}
               />
