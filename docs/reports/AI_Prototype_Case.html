@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prototype Case - Knowledge Base</title>
+    <style>
+        body { 
+            font-family: Helvetica, Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 2rem; 
+            line-height: 1.6; 
+            background: #fff;
+            color: #333;
+        }
+        h1 { 
+            color: #333; 
+            border-bottom: 2px solid #007acc; 
+            padding-bottom: 0.5rem; 
+        }
+        h2 {
+            color: #555;
+            margin-top: 2rem;
+        }
+        h3 {
+            color: #666;
+            margin-top: 1.5rem;
+        }
+        a { 
+            color: #007acc; 
+            text-decoration: none; 
+        }
+        a:hover { 
+            text-decoration: underline; 
+        }
+        .summary {
+            background: #f0f8ff;
+            border-left: 4px solid #007acc;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            background: #007acc;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .back-link:hover {
+            background: #005a9e;
+        }
+    </style>
+</head>
+<body>
+    <a href="/knowledge-base/" class="back-link">← Назад до головної</a>
+    
+    <h1>Кейс: як AI допоміг зробити прототип</h1>
+    
+    <div class="summary">
+        <strong>Результат:</strong> AI (Cursor + промпти) прискорив створення робочого прототипу портфоліо:
+        <ul>
+            <li>Згенеровано картки проєктів, модалку, хедер/футер, сторінку Contacts.</li>
+            <li>Вирівняно стилі (темна тема: <code>#000</code>, текст <code>#777</code>, тайтли <code>#E6E6E6</code>, картки <code>#1A1A1A</code>, бордери <code>#333</code>).</li>
+            <li>Кнопки/стрілки — градієнт <strong>B6CAFB → BDB3FF</strong>.</li>
+        </ul>
+    </div>
+
+    <h2>1) Контекст</h2>
+    <ul>
+        <li>Проєкт: особисте портфоліо (Riverton Group, Vertex Studio, NovaPost, HealthPad).</li>
+        <li>Технології: Vite, TailwindCSS, React (або vanilla), Cursor, GitHub, Obsidian.</li>
+        <li>Завдання: швидко зібрати екрани <strong>Home / About / Contacts</strong>, інтеракції та стилі.</li>
+    </ul>
+
+    <h2>2) Що зробив AI (по блоках)</h2>
+    <ul>
+        <li><strong>Hero + заголовки:</strong> генерація структури та типографіки; підсвітка акцентів.</li>
+        <li><strong>Картки робіт:</strong> макет, ховер-ефекти (glow/outline), CTA "View more".</li>
+        <li><strong>Модалка кейса:</strong> структура з прев'ю мокапа, опис, кнопка, іконка.</li>
+        <li><strong>Сторінка Contacts:</strong> форма (name/email/message), стилі/валідація, футер.</li>
+    </ul>
+
+    <h2>3) Ключові промпти (сирцеві приклади)</h2>
+    <pre><code>"Зроби картку проєкту з ховером Glowing Border у моєму градієнті B6CAFB->BDB3FF, темна тема, бордери #333, фон картки #1A1A1A, тайтли #E6E6E6, опис #777."</code></pre>
+
+    <h2>4) Артефакти</h2>
+    <ul>
+        <li>Посилання: <a href="https://github.com/ninavoytovychdesign/knowledge-base">GitHub</a></li>
+        <li>Локальний сайт: <a href="http://localhost:5173/">http://localhost:5173/</a></li>
+    </ul>
+
+    <h2>5) Висновки</h2>
+    <ul>
+        <li>AI значно прискорив розробку UI-компонентів</li>
+        <li>Промпти з конкретними кольорами та розмірами дають кращі результати</li>
+        <li>Ітеративний підхід з поступовим уточненням вимог ефективний</li>
+    </ul>
+</body>
+</html>
