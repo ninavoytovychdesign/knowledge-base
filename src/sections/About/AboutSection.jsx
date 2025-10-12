@@ -1,10 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../lib/LanguageContext";
 
 export default function AboutSection() {
   const { t } = useLanguage();
   const [hoveredCertificate, setHoveredCertificate] = useState(null);
-  const [clickedCertificate, setClickedCertificate] = useState(null);
+  const [lettersVisible, setLettersVisible] = useState([]);
+
+  useEffect(() => {
+    // Анімація літер для заголовків
+    const titleText = t('aboutTitle') + ' ' + t('certificates');
+    const totalLetters = titleText.length;
+    const visibleLetters = [];
+    
+    // Створюємо масив індексів для хаотичного порядку
+    const indices = Array.from({ length: totalLetters }, (_, i) => i);
+    const shuffledIndices = indices.sort(() => Math.random() - 0.5);
+    
+    // Додаємо літери по черзі з випадковою затримкою
+    shuffledIndices.forEach((index, i) => {
+      setTimeout(() => {
+        visibleLetters.push(index);
+        setLettersVisible([...visibleLetters]);
+      }, i * 80 + Math.random() * 120); // 80-200ms між літерами
+    });
+  }, [t]);
+
+  // Функція для рендерингу тексту з анімацією літер
+  const renderAnimatedText = (text, className = '', startIndex = 0) => {
+    return text.split('').map((letter, index) => (
+      <span
+        key={startIndex + index}
+        className={`transition-all duration-300 ${
+          lettersVisible.includes(startIndex + index) 
+            ? 'opacity-100 transform scale-100' 
+            : 'opacity-0 transform scale-75'
+        } ${className}`}
+        style={{
+          transitionDelay: `${Math.random() * 200}ms`
+        }}
+      >
+        {letter === ' ' ? '\u00A0' : letter}
+      </span>
+    ));
+  };
 
   const certificates = [
     {
@@ -34,10 +72,10 @@ export default function AboutSection() {
   ];
   return (
     <>
-      {/* Title */}
-      <h1 className="text-[20px] sm:text-[24px] text-textPrimary text-left mb-4 font-helvetica">
-        {t('aboutTitle')}
-      </h1>
+            {/* Title */}
+            <h1 className="text-[20px] sm:text-[24px] text-textPrimary text-left mb-4 font-helvetica">
+              {renderAnimatedText(t('aboutTitle'), 'text-textPrimary', 0)}
+            </h1>
 
       {/* Paragraph */}
       <div className="text-textSecondary text-left mb-8 sm:mb-10 font-helvetica space-y-3 sm:space-y-4">
@@ -74,7 +112,7 @@ export default function AboutSection() {
       <div className="mt-[60px]">
         <div className="text-left mb-6">
           <h2 className="text-[20px] sm:text-[24px] text-white font-helvetica font-medium">
-            {t('certificates')}
+            {renderAnimatedText(t('certificates'), 'text-white', t('aboutTitle').length)}
           </h2>
         </div>
         
@@ -82,33 +120,29 @@ export default function AboutSection() {
                  {certificates.slice().reverse().map((certificate) => (
                    <div
                      key={certificate.id}
-                     className="flex-shrink-0 relative cursor-pointer"
+                     className="flex-shrink-0 relative"
                      onMouseEnter={() => setHoveredCertificate(certificate.id)}
                      onMouseLeave={() => setHoveredCertificate(null)}
-                     onClick={() => setClickedCertificate(clickedCertificate === certificate.id ? null : certificate.id)}
                    >
                      <img
                        src={certificate.image}
                        alt={certificate.title}
-                       className="w-[120px] h-auto rounded-lg grayscale brightness-90 contrast-110 hover:grayscale-0 hover:brightness-100 hover:contrast-100 transition-all duration-500"
+                       className="w-[120px] h-auto rounded-lg hover:grayscale-0 hover:brightness-100 hover:contrast-100 transition-all duration-500"
                      />
                    </div>
                  ))}
                  {/* Blur overlay */}
-                 <div 
-                   className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-all duration-700 ease-in-out ${clickedCertificate ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-                   onClick={() => setClickedCertificate(null)}
-                 ></div>
+                 <div className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-all duration-700 ease-in-out pointer-events-none ${hoveredCertificate ? 'opacity-100' : 'opacity-0'}`}></div>
                  {/* Enlarged certificate overlay */}
                  {certificates.slice().reverse().map((certificate) => (
                    <div
                      key={`enlarged-${certificate.id}`}
-                     className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 transition-all duration-700 ease-in-out pointer-events-none ${clickedCertificate === certificate.id ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}
+                     className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 transition-all duration-700 ease-in-out pointer-events-none ${hoveredCertificate === certificate.id ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}
                    >
                      <img
                        src={certificate.image}
                        alt={certificate.title}
-                       className="w-[600px] h-auto rounded-lg shadow-[0_0_30px_rgba(255,255,255,0.2)] grayscale-0"
+                       className="w-[600px] h-auto rounded-lg grayscale-0"
                      />
                    </div>
                  ))}

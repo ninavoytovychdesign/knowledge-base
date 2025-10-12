@@ -197,10 +197,10 @@ export const translations = {
     
     // About Page
     aboutTitle: "Chi sono",
-    aboutText1: "Sono Nina Voytovych, una UI/UX designer di Fano, Italia. Il mio percorso nel design è iniziato con l'amore per l'arte e la composizione, e oggi combino questo background creativo con un focus preciso sull'usabilità e sui bisogni degli utenti.",
-    aboutText2: "Mi sono laureata all'Accademia di Belle Arti con un Master in Design, che mi ha dato una solida base in composizione e teoria del colore. Negli ultimi anni ho lavorato su progetti diversi — da redesign e-commerce e landing page a ricerche UX per prodotti digitali e persino dashboard di investimento sotto NDA. Mi piace la sfida di trasformare idee complesse in design che sembrano naturali, chiari e visivamente coinvolgenti.",
-    aboutText3: "La collaborazione è al centro del mio modo di lavorare: rimango vicina sia agli utenti che agli sviluppatori, presentando soluzioni, rifinendo i dettagli e assicurandomi che il prodotto finale offra un valore reale. I miei case study recenti (come Riverton Group e Vertex Studio) riflettono questo mix di creatività e praticità.",
-    aboutText5: "Per me, il design non riguarda solo i pixel su uno schermo — si tratta di creare esperienze che rendono la vita delle persone un po' più facile e un po' più bella.",
+    aboutText1: "Sono Nina Voytovych, una UI/UX designer basata in Italia.",
+    aboutText2: "Con un background nell'arte e una passione per il design centrato sull'utente, creo prodotti che combinano funzionalità, emozione e chiarezza visiva. Il mio lavoro spazia dalle piattaforme SaaS alla tecnologia civica e all'e-commerce — unendo ricerca, estetica pulita e attenzione ai dettagli.",
+    aboutText3: "Oltre al design, esploro come l'AI e il codice possano potenziare i processi creativi e rendere il design più intelligente.",
+    aboutText5: "",
     podcastGuest: "Ospite Podcast",
     listenOnSpotify: "Ascolta su Spotify",
     certificates: "I miei certificati",

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "../lib/LanguageContext";
 import { Spotlight } from "../components/ui/spotlight";
 import { motion, AnimatePresence } from "framer-motion";
@@ -6,7 +6,46 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Contacts() {
   const [message, setMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [lettersVisible, setLettersVisible] = useState([]);
   const { t } = useLanguage();
+
+  useEffect(() => {
+    // Анімація літер для заголовка
+    const titleText = t('contactTitle');
+    const totalLetters = titleText.length;
+    const visibleLetters = [];
+    
+    // Створюємо масив індексів для хаотичного порядку
+    const indices = Array.from({ length: totalLetters }, (_, i) => i);
+    const shuffledIndices = indices.sort(() => Math.random() - 0.5);
+    
+    // Додаємо літери по черзі з випадковою затримкою
+    shuffledIndices.forEach((index, i) => {
+      setTimeout(() => {
+        visibleLetters.push(index);
+        setLettersVisible([...visibleLetters]);
+      }, i * 80 + Math.random() * 120); // 80-200ms між літерами
+    });
+  }, [t]);
+
+  // Функція для рендерингу тексту з анімацією літер
+  const renderAnimatedText = (text, className = '', startIndex = 0) => {
+    return text.split('').map((letter, index) => (
+      <span
+        key={startIndex + index}
+        className={`transition-all duration-300 ${
+          lettersVisible.includes(startIndex + index) 
+            ? 'opacity-100 transform scale-100' 
+            : 'opacity-0 transform scale-75'
+        } ${className}`}
+        style={{
+          transitionDelay: `${Math.random() * 200}ms`
+        }}
+      >
+        {letter === ' ' ? '\u00A0' : letter}
+      </span>
+    ));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,9 +65,9 @@ export default function Contacts() {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6">
           <div className="flex justify-center items-center">
             <div className="max-w-[600px] bg-transparent rounded-lg pt-0 pb-6 sm:pb-10 px-6 sm:px-10">
-          <h1 className="text-[20px] sm:text-[24px] text-textPrimary text-left mb-4 font-helvetica">
-            {t('contactTitle')}
-          </h1>
+                     <h1 className="text-[20px] sm:text-[24px] text-textPrimary text-left mb-4 font-helvetica">
+                       {renderAnimatedText(t('contactTitle'), 'text-textPrimary', 0)}
+                     </h1>
           <p className="text-textSecondary text-left mb-8 sm:mb-10 font-helvetica">
             {t('contactDescription')}
           </p>

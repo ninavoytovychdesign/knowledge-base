@@ -4,18 +4,56 @@ import { Spotlight } from "./ui/spotlight";
 
 export function Hero() {
   const [titleVisible, setTitleVisible] = useState(false);
+  const [lettersVisible, setLettersVisible] = useState([]);
   const { t } = useLanguage();
 
   useEffect(() => {
     // Анімація тайтлу
     const titleTimer = setTimeout(() => {
       setTitleVisible(true);
+      
+      // Хаотичне з'явлення літер
+      const titleText = t('heroTitleHighlight') + ' ' + t('heroTitleLine2');
+      const totalLetters = titleText.length;
+      const visibleLetters = [];
+      
+      // Створюємо масив індексів для хаотичного порядку
+      const indices = Array.from({ length: totalLetters }, (_, i) => i);
+      const shuffledIndices = indices.sort(() => Math.random() - 0.5);
+      
+      // Додаємо літери по черзі з випадковою затримкою
+      shuffledIndices.forEach((index, i) => {
+        setTimeout(() => {
+          visibleLetters.push(index);
+          setLettersVisible([...visibleLetters]);
+        }, i * 20 + Math.random() * 30); // 20-50ms між літерами
+      });
+      
     }, 500);
 
     return () => {
       clearTimeout(titleTimer);
     };
-  }, []);
+  }, [t]);
+
+  // Функція для рендерингу тексту з анімацією літер
+  const renderAnimatedText = (text, className = '', startIndex = 0) => {
+    return text.split('').map((letter, index) => (
+      <span
+        key={startIndex + index}
+        className={`transition-all duration-150 ${
+          lettersVisible.includes(startIndex + index) 
+            ? 'opacity-100 transform scale-100' 
+            : 'opacity-0 transform scale-75'
+        } ${className}`}
+        style={{
+          transitionDelay: `${Math.random() * 100}ms`
+        }}
+      >
+        {letter === ' ' ? '\u00A0' : letter}
+      </span>
+    ));
+  };
 
   return (
           <section className="relative flex flex-col items-center justify-start h-[800px] bg-black bg-grid-white/[0.02] pt-36">
@@ -36,7 +74,12 @@ export function Hero() {
           titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <div className="text-white !important" style={{ color: 'white !important' }}>
-            UI/UX designer <span className="text-textSecondary !important" style={{ color: '#777777 !important' }}>shaping digital products through clarity, empathy, and precision</span>
+            <div>
+              {renderAnimatedText("Nina Voytovych — UI/UX designer shaping digital", 'text-white', 0)}
+            </div>
+            <div className="text-white !important" style={{ color: 'white !important' }}>
+              {renderAnimatedText("products through clarity, empathy, and precision", 'text-white', "Nina Voytovych — UI/UX designer shaping digital".length)}
+            </div>
           </div>
         </h1>
         
