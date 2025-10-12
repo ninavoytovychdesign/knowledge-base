@@ -99,8 +99,11 @@ export default function AboutSection() {
               <h3 className="text-white text-[16px] font-medium font-helvetica">Junior's Diary</h3>
               <p className="text-textSecondary text-[14px] font-helvetica">Podcast Guest</p>
             </div>
-                   <button className="w-[36px] h-[36px] rounded-full bg-[#1A1A1A]/60 hover:bg-[#1A1A1A]/80 transition flex items-center justify-center absolute top-0 right-0 group">
-                     <svg className="w-4 h-4 text-white group-hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   <button 
+                     className="w-[36px] h-[36px] rounded-full bg-[#1A1A1A]/60 hover:bg-[#E6E6E6] hover:text-black transition flex items-center justify-center absolute top-0 right-0 group"
+                     onClick={() => window.open('https://open.spotify.com/episode/2LFjZ4nII3Z3iQDHqxlk0L?si=9133db58bd8f422d&nd=1&dlsi=27a591b0e5fb4461', '_blank')}
+                   >
+                     <svg className="w-4 h-4 text-white group-hover:text-black transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
