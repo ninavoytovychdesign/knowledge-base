@@ -1,12 +1,12 @@
 ---
-title: "AI Design Month — підсумок"
+title: "Створення прототипу сайту за допомогою АІ"
 date: "2025-01-12"
 tags: [ai, design, summary, achievements]
 status: completed
 authors: [Nina Voytovych]
 ---
 
-# AI Design Month — підсумок
+# Створення прототипу сайту за допомогою АІ
 
 > [!summary] Результати місяця
 За січень 2025 року повністю освоєно AI-інструменти та створено комплексне портфоліо з базою знань.
