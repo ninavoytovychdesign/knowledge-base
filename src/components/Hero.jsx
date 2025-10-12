@@ -33,6 +33,12 @@ export function Hero() {
             {t('heroTitleLine3')}
           </div>
         </h1>
+        
+        <p className={`text-[18px] font-light text-textSecondary leading-[140%] font-helvetica mt-8 transition-all duration-1000 ease-out delay-300 ${
+          titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
+          {t('heroSubtitle')}
+        </p>
       </div>
     </section>
   );
