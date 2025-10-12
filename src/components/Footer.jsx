@@ -7,7 +7,13 @@ const Footer = () => {
   return (
     <footer className="w-full bg-black border-t border-[#1A1A1A] py-6 text-sm text-textSecondary">
       <div className="max-w-screen-xl mx-auto px-12 flex justify-between items-center">
-        {/* Соцмережі - ліва сторона */}
+        {/* Копірайт - ліва сторона */}
+        <div className="text-left">
+          <span>{t('footerText')} • </span>
+          <a href="/privacy" className="underline hover:bg-gradient-accent-text transition-colors duration-300">{t('privacyPolicy')}</a>
+        </div>
+
+        {/* Соцмережі - права сторона */}
         <div className="flex items-center gap-4">
           <a 
             href="https://www.behance.net/ninavoytovych" 
@@ -25,13 +31,6 @@ const Footer = () => {
           >
             <FaLinkedin className="w-6 h-6 text-textPrimary hover:text-textSecondary transition-colors duration-300" />
           </a>
-        </div>
-
-        {/* Текст та посилання - права сторона */}
-        <div className="text-center">
-          {t('footerText')}
-          <br />
-          <a href="/privacy" className="underline hover:bg-gradient-accent-text transition-colors duration-300">{t('privacyPolicy')}</a>
         </div>
       </div>
     </footer>
