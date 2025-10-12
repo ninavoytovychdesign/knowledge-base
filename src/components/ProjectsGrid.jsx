@@ -72,7 +72,7 @@ const ProjectsGrid = () => {
     {
       id: 2,
       key: 'healthPad',
-      position: { top: '42.5%', left: '70%', transform: 'translateX(-50%)' },
+      position: { top: '42.5%', left: '65%', transform: 'translateX(-50%)' },
       mobilePosition: { top: '45%', right: '10%' },
       animation: 'float-2',
       letter: 'H',

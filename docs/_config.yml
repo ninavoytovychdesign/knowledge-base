@@ -1,9 +1,0 @@
-title: "Knowledge Base"
-description: "База знань Nina Voytovych"
-theme: minima
-url: "https://ninavoytovychdesign.github.io"
-baseurl: "/knowledge-base"
-
-markdown: kramdown
-plugins:
-  - jekyll-seo-tag

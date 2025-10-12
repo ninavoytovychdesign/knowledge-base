@@ -22,6 +22,7 @@ module.exports = {
         // Text colors
         textPrimary: '#E6E6E6',
         textSecondary: '#777777',
+        white: '#FAFAFA',
         
         // UI colors
         border: '#1A1A1A',

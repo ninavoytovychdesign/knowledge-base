@@ -1,17 +1,53 @@
-# Knowledge Base
+# Nina Voytovych - Portfolio
 
-База знань Nina Voytovych: промпти, процеси, дизайн-система, нотатки та ADR.
+UI/UX Designer Portfolio built with React, Vite, and Tailwind CSS.
 
-## Розділи
-- `docs/` — публічна документація (може відображатися на GitHub Pages)
-- `kb/` — внутрішні нотатки (глосарій, roadmap)
-- `templates/` — шаблони (ADR, митинг-ноти, рішення)
-- `scripts/` — допоміжні скрипти (git-аліаси, авто-пуш)
+## Features
 
-## Як працювати
-1. Пиши нотатки в Markdown.
-2. Для важливих змін — створюй ADR у `templates/adr.md`.
-3. Запускай `./scripts/update.sh "короткий опис змін"` щоб додати, закомітити та відправити на GitHub.
+- Responsive design
+- Dark theme
+- Interactive animations
+- Multi-language support (EN, UA, IT)
+- Sparkles effects
+- Floating logo cards
+- Contact form
 
-## Швидкий старт з Pages
-Вміст з `docs/` публікується як сайт (див. розділ "Deploy").
+## Tech Stack
+
+- React 18
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Router
+
+## Getting Started
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start development server:
+```bash
+npm run dev
+```
+
+3. Build for production:
+```bash
+npm run build
+```
+
+## Project Structure
+
+```
+src/
+├── components/     # Reusable components
+├── pages/         # Page components
+├── sections/      # Section components
+├── lib/           # Utilities and contexts
+└── main.jsx       # Entry point
+```
+
+## License
+
+MIT License

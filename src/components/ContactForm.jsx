@@ -21,7 +21,7 @@ export default function ContactForm() {
             <input
               type="text"
               placeholder={t('namePlaceholder')}
-              className="w-full bg-transparent text-[#E6E6E6] placeholder-[#343434] placeholder:text-sm placeholder:font-normal rounded-lg px-4 py-3 focus:outline-none border border-[#1B1B1B] hover:border-[#1B1B1B] hover:bg-[#100F0F] transition-all duration-300"
+              className="w-full bg-transparent text-[#E6E6E6] placeholder-[#343434] placeholder:text-sm placeholder:font-normal rounded-lg px-4 py-3 focus:outline-none border border-[#1A1A1A] hover:border-[#1A1A1A] hover:bg-[#100F0F] transition-all duration-300"
             />
           </div>
 
@@ -30,7 +30,7 @@ export default function ContactForm() {
             <input
               type="email"
               placeholder={t('emailPlaceholder')}
-              className="w-full bg-transparent text-[#E6E6E6] placeholder-[#343434] placeholder:text-sm placeholder:font-normal rounded-lg px-4 py-3 focus:outline-none border border-[#1B1B1B] hover:border-[#1B1B1B] hover:bg-[#100F0F] transition-all duration-300"
+              className="w-full bg-transparent text-[#E6E6E6] placeholder-[#343434] placeholder:text-sm placeholder:font-normal rounded-lg px-4 py-3 focus:outline-none border border-[#1A1A1A] hover:border-[#1A1A1A] hover:bg-[#100F0F] transition-all duration-300"
             />
           </div>
 
@@ -51,7 +51,7 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            className="w-full py-3 rounded-lg font-medium text-black bg-gradient-accent hover:opacity-90 transition mx-auto flex items-center justify-between px-4"
+            className="w-full py-3 rounded-lg font-medium text-black bg-white hover:opacity-90 transition mx-auto flex items-center justify-between px-4 font-helvetica"
           >
             <span>{t('sendButton')}</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
