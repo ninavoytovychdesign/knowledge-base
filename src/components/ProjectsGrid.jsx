@@ -65,8 +65,8 @@ const ProjectsGrid = () => {
       title: 'Nova Post',
       description: 'Comprehensive UX research of the business account dashboard aimed at identifying user pain points',
       mockups: ['./mockups/novapost-mockup.png'],
-      logo: './logos/novapost-logo.png',
-      hoverLogo: './logos/novapost-logo.png',
+      logo: '/knowledge-base/logos/novapost-logo.png',
+      hoverLogo: '/knowledge-base/logos/novapost-logo.png',
       color: '#DA292B'
     },
     {
@@ -79,8 +79,8 @@ const ProjectsGrid = () => {
       title: 'HealthPad',
       description: 'A self-initiated mobile application — a digital health record for the whole family',
       mockups: ['./mockups/healthpad-mockup.png'],
-      logo: './logos/healthpad-logo.png',
-      hoverLogo: './logos/healthpad-logo.png',
+      logo: '/knowledge-base/logos/healthpad-logo.png',
+      hoverLogo: '/knowledge-base/logos/healthpad-logo.png',
       color: '#11B6E2'
     },
     // Інші картки
@@ -94,8 +94,8 @@ const ProjectsGrid = () => {
       title: 'Vertex Studio',
       description: 'A visual identity and website concept for a creative studio, showcasing a modern and elegant approach',
       mockups: ['./mockups/vertex.png'],
-      logo: './logos/vertex-logo.png',
-      hoverLogo: './logos/vertex-logo.png',
+      logo: '/knowledge-base/logos/vertex-logo.png',
+      hoverLogo: '/knowledge-base/logos/vertex-logo.png',
       color: '#3EA3A9'
     },
     {
@@ -108,8 +108,8 @@ const ProjectsGrid = () => {
       title: 'Riverton Group',
       description: 'A complete redesign of the brand identity and landing page, supported by UX research',
       mockups: ['./mockups/rivertong-mockup.png?v=2'],
-      logo: './logos/riverton-logo.png',
-      hoverLogo: './logos/riverton-logo.png',
+      logo: '/knowledge-base/logos/riverton-logo.png',
+      hoverLogo: '/knowledge-base/logos/riverton-logo.png',
       color: '#103FD3'
     },
     {
@@ -122,8 +122,8 @@ const ProjectsGrid = () => {
       title: 'Open Kharkiv',
       description: 'A redesign of a civic technology mobile application, improving usability, streamlining flows',
       mockups: ['./mockups/openkharkiv11.png'],
-      logo: './logos/openkharkiv-logo.png',
-      hoverLogo: './logos/openkharkiv-logo.png',
+      logo: '/knowledge-base/logos/openkharkiv-logo.png',
+      hoverLogo: '/knowledge-base/logos/openkharkiv-logo.png',
       color: '#19A05C'
     }
   ];
@@ -236,7 +236,7 @@ const ProjectsGrid = () => {
                    {clickedProject.title === 'Vertex Studio' && (
                      <div className="relative">
                        <img 
-                         src="./logos/flag-logo.svg" 
+                         src="/knowledge-base/logos/flag-logo.svg" 
                          alt="UI Badge" 
                          className="w-6 h-10"
                        />
@@ -293,7 +293,7 @@ const ProjectsGrid = () => {
                    {clickedProject.title === 'Vertex Studio' && (
                      <div className="relative">
                        <img 
-                         src="./logos/flag-logo.svg" 
+                         src="/knowledge-base/logos/flag-logo.svg" 
                          alt="UI Badge" 
                          className="w-6 h-10"
                        />

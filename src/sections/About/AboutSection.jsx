@@ -94,7 +94,7 @@ export default function AboutSection() {
       <div className="mt-[60px]">
         <div className="bg-[#141414]/60 border border-[#1A1A1A] rounded-lg p-4 sm:p-6">
           <div className="flex flex-col items-start relative">
-            <img src="./logos/spotify-logo.svg.png" alt="Spotify Logo" className="w-[120px] h-[40px] object-contain mb-3" />
+            <img src="/knowledge-base/logos/spotify-logo.svg.png" alt="Spotify Logo" className="w-[120px] h-[40px] object-contain mb-3" />
             <div className="flex flex-col items-start text-left">
               <h3 className="text-white text-[16px] font-medium font-helvetica">Junior's Diary</h3>
               <p className="text-textSecondary text-[14px] font-helvetica">Podcast Guest</p>
