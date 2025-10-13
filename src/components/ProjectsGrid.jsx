@@ -127,7 +127,7 @@ const ProjectsGrid = () => {
       letter: 'O',
       title: 'Open Kharkiv',
       description: 'A redesign of a civic technology mobile application, improving usability, streamlining flows',
-      mockups: [getAssetPath('mockups/openkharkiv11.png')],
+      mockups: [getAssetPath('mockups/openkharkiv1.png')],
       logo: getAssetPath('logos/openkharkiv-logo.png'),
       hoverLogo: getAssetPath('logos/openkharkiv-logo.png'),
       color: '#19A05C'
@@ -259,9 +259,7 @@ const ProjectsGrid = () => {
                   <img
                     src={clickedProject.mockups[0]}
                     alt={`${clickedProject.title} mockup`}
-                    className={`w-full h-auto object-contain ${
-                      clickedProject.title === 'Open Kharkiv' ? 'max-h-[300px]' : 'scale-75'
-                    }`}
+                    className="w-full h-auto object-contain scale-75"
                     onError={(e) => {
                       e.target.style.display = 'none';
                     }}
