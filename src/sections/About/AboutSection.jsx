@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../lib/LanguageContext";
 import { getAssetPath } from "../../utils/assetPath";
+import { PixelatedCanvas } from "../../components/ui/pixelated-canvas";
 
 export default function AboutSection() {
   const { t } = useLanguage();
@@ -73,10 +74,10 @@ export default function AboutSection() {
   ];
   return (
     <>
-            {/* Title */}
-            <h1 className="text-[20px] sm:text-[24px] text-textPrimary text-left mb-4 font-helvetica">
-              {renderAnimatedText(t('aboutTitle'), 'text-textPrimary', 0)}
-            </h1>
+      {/* Title */}
+      <h1 className="text-[20px] sm:text-[24px] text-textPrimary text-left mb-4 font-helvetica">
+        {renderAnimatedText(t('aboutTitle'), 'text-textPrimary', 0)}
+      </h1>
 
       {/* Paragraph */}
       <div className="text-textSecondary text-left mb-8 sm:mb-10 font-helvetica space-y-3 sm:space-y-4">
@@ -89,6 +90,31 @@ export default function AboutSection() {
         <p>
           {t('aboutText3')}
         </p>
+      </div>
+
+      {/* Photo - positioned separately on the right, aligned with Behance icon */}
+      <div className="absolute top-[120px] right-[-200px] lg:right-[-300px] xl:right-[-400px]">
+        <PixelatedCanvas
+          src={getAssetPath('nina-photo.jpg')}
+          width={300}
+          height={300}
+          cellSize={4}
+          dotScale={0.9}
+          shape="square"
+          backgroundColor="#000000"
+          dropoutStrength={0.3}
+          interactive={true}
+          distortionStrength={2}
+          distortionRadius={100}
+          distortionMode="swirl"
+          followSpeed={0.2}
+          jitterStrength={2}
+          jitterSpeed={3}
+          sampleAverage={true}
+          tintColor="#FFFFFF"
+          tintStrength={0.1}
+          className="rounded-lg border border-[#1A1A1A]"
+        />
       </div>
 
       {/* Spotify Card */}
