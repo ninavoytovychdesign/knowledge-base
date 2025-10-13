@@ -317,16 +317,18 @@ const ProjectsGrid = () => {
                  </h3>
                  
                  {/* Mockup Container */}
-                 <div className="flex-1 flex items-center justify-center rounded overflow-hidden mb-3">
-                  <img
-                    src={clickedProject.mockups[0]}
-                    alt={`${clickedProject.title} mockup`}
-                    className="w-full h-auto object-contain scale-75"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                    }}
-                  />
-                </div>
+                 {clickedProject.title !== 'Open Kharkiv' && (
+                   <div className="flex-1 flex items-center justify-center rounded overflow-hidden mb-3">
+                     <img
+                       src={clickedProject.mockups[0]}
+                       alt={`${clickedProject.title} mockup`}
+                       className="w-full h-auto object-contain scale-75"
+                       onError={(e) => {
+                         e.target.style.display = 'none';
+                       }}
+                     />
+                   </div>
+                 )}
 
                  {/* Description */}
                  <p className="text-[#CCCCCC] text-[12px] sm:text-[14px] font-helvetica leading-[140%] mb-6">
