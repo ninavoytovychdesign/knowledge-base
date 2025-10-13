@@ -33,7 +33,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       // Тільки для головної сторінки відстежуємо скрол
-      if (location.pathname === '/') {
+      if (location.pathname === '' || location.pathname === '/') {
         const sections = ['home', 'contacts'];
         const scrollPosition = window.scrollY + 100;
 
