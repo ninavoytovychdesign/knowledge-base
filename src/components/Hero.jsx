@@ -75,10 +75,10 @@ export function Hero() {
         }`}>
           <div className="text-white !important" style={{ color: 'white !important' }}>
             <div>
-              {renderAnimatedText("Nina Voytovych — UI/UX designer shaping digital", 'text-white', 0)}
+              {renderAnimatedText(t('heroTitleHighlight'), 'text-white', 0)}
             </div>
             <div className="text-white !important" style={{ color: 'white !important' }}>
-              {renderAnimatedText("products through clarity, empathy, and precision", 'text-white', "Nina Voytovych — UI/UX designer shaping digital".length)}
+              {renderAnimatedText(t('heroTitleLine2'), 'text-white', t('heroTitleHighlight').length)}
             </div>
           </div>
         </h1>
