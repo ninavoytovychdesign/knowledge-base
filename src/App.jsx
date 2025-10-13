@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Home from './pages/Home.jsx';
@@ -9,7 +9,7 @@ import CursorGlow from './components/CursorGlow.jsx';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/knowledge-base">
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
         <div className="flex-grow">
