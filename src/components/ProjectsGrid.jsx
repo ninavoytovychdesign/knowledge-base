@@ -256,14 +256,16 @@ const ProjectsGrid = () => {
                  
                  {/* Mockup Container */}
                  <div className="flex-1 flex items-center justify-center px-3 py-3 rounded overflow-hidden mb-3">
-                  <img
-                    src={clickedProject.mockups[0]}
-                    alt={`${clickedProject.title} mockup`}
-                    className="w-full h-auto object-contain scale-75"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                    }}
-                  />
+                  {clickedProject.title !== 'Open Kharkiv' && (
+                    <img
+                      src={clickedProject.mockups[0]}
+                      alt={`${clickedProject.title} mockup`}
+                      className="w-full h-auto object-contain scale-75"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                      }}
+                    />
+                  )}
                 </div>
                 
                  {/* Description */}
