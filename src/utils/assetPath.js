@@ -3,11 +3,6 @@ export const getAssetPath = (path) => {
   // Remove leading slash if present
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
   
-  // In production (GitHub Pages), use base path
-  if (import.meta.env.PROD) {
-    return `/knowledge-base/${cleanPath}`;
-  }
-  
-  // In development, use relative path
+  // Always use root path for GitHub Pages
   return `/${cleanPath}`;
 };
