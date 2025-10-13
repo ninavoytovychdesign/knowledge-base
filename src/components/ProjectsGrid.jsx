@@ -14,6 +14,11 @@ const ProjectsGrid = () => {
   const getModalPosition = () => {
     if (!clickedProject) return { right: 0, top: 0 };
     
+    // Check if window is available (for SSR)
+    if (typeof window === 'undefined') {
+      return { right: 24, top: '50%', transform: 'translateY(-50%)' };
+    }
+    
     // Position modal aligned with Behance icon in footer
     const modalWidth = 400;
     const modalHeight = 800;
@@ -116,8 +121,8 @@ const ProjectsGrid = () => {
     {
       id: 5,
       key: 'openKharkiv',
-      position: { top: '50%', right: '10%' },
-      mobilePosition: { top: '55%', right: '10%' },
+      position: { top: '50%', left: '85%' },
+      mobilePosition: { top: '55%', left: '85%' },
       animation: 'float-5',
       letter: 'O',
       title: 'Open Kharkiv',
@@ -217,7 +222,7 @@ const ProjectsGrid = () => {
           onClick={(e) => e.stopPropagation()}
         >
                  <div className="bg-[#141414]/30 border border-[#1A1A1A] rounded-lg p-3 sm:p-4 shadow-2xl w-[280px] sm:w-[400px] h-[800px] backdrop-blur-sm">
-             {clickedProject.title === 'Open Kharkiv' || clickedProject.title === 'HealthPad' ? (
+             {clickedProject.title === 'HealthPad' ? (
                /* Open Kharkiv - Auto Layout Container */
                <div className="flex flex-col h-full">
                  {/* Logo and UI Badge at the top */}
