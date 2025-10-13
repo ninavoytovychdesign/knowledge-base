@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../lib/LanguageContext";
+import { getAssetPath } from "../../utils/assetPath";
 
 export default function AboutSection() {
   const { t } = useLanguage();
@@ -47,25 +48,25 @@ export default function AboutSection() {
   const certificates = [
     {
       id: 1,
-      image: '/knowledge-base/certificate1.png',
+      image: getAssetPath('certificate1.png'),
       title: 'UX Research Fundamentals',
       institution: 'Projector Institute'
     },
     {
       id: 2,
-      image: '/knowledge-base/certificate2.png',
+      image: getAssetPath('certificate2.png'),
       title: 'UI Design Principles',
       institution: 'Projector Institute'
     },
     {
       id: 3,
-      image: '/knowledge-base/certificate3.png',
+      image: getAssetPath('certificate3.png'),
       title: 'Design Systems',
       institution: 'Projector Institute'
     },
     {
       id: 4,
-      image: '/knowledge-base/certificate4.png',
+      image: getAssetPath('certificate4.png'),
       title: 'Advanced UX Methods',
       institution: 'Projector Institute'
     }
@@ -94,7 +95,7 @@ export default function AboutSection() {
       <div className="mt-[60px]">
         <div className="bg-[#141414]/60 border border-[#1A1A1A] rounded-lg p-4 sm:p-6">
           <div className="flex flex-col items-start relative">
-            <img src="/knowledge-base/logos/spotify-logo.svg.png" alt="Spotify Logo" className="w-[120px] h-[40px] object-contain mb-3" />
+            <img src={getAssetPath('logos/spotify-logo.svg.png')} alt="Spotify Logo" className="w-[120px] h-[40px] object-contain mb-3" />
             <div className="flex flex-col items-start text-left">
               <h3 className="text-white text-[16px] font-medium font-helvetica">Junior's Diary</h3>
               <p className="text-textSecondary text-[14px] font-helvetica">Podcast Guest</p>

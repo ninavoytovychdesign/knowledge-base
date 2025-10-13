@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../lib/LanguageContext';
+import { getAssetPath } from '../utils/assetPath';
 
 const ProjectsGrid = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,9 +65,9 @@ const ProjectsGrid = () => {
       letter: 'N',
       title: 'Nova Post',
       description: 'Comprehensive UX research of the business account dashboard aimed at identifying user pain points',
-      mockups: ['/knowledge-base/mockups/novapost-mockup.png'],
-      logo: '/knowledge-base/logos/novapost-logo.png',
-      hoverLogo: '/knowledge-base/logos/novapost-logo.png',
+      mockups: [getAssetPath('mockups/novapost-mockup.png')],
+      logo: getAssetPath('logos/novapost-logo.png'),
+      hoverLogo: getAssetPath('logos/novapost-logo.png'),
       color: '#DA292B'
     },
     {
@@ -78,9 +79,9 @@ const ProjectsGrid = () => {
       letter: 'H',
       title: 'HealthPad',
       description: 'A self-initiated mobile application — a digital health record for the whole family',
-      mockups: ['/knowledge-base/mockups/healthpad-mockup.png'],
-      logo: '/knowledge-base/logos/healthpad-logo.png',
-      hoverLogo: '/knowledge-base/logos/healthpad-logo.png',
+      mockups: [getAssetPath('mockups/healthpad-mockup.png')],
+      logo: getAssetPath('logos/healthpad-logo.png'),
+      hoverLogo: getAssetPath('logos/healthpad-logo.png'),
       color: '#11B6E2'
     },
     // Інші картки
@@ -93,9 +94,9 @@ const ProjectsGrid = () => {
       letter: 'V',
       title: 'Vertex Studio',
       description: 'A visual identity and website concept for a creative studio, showcasing a modern and elegant approach',
-      mockups: ['/knowledge-base/mockups/vertex.png'],
-      logo: '/knowledge-base/logos/vertex-logo.png',
-      hoverLogo: '/knowledge-base/logos/vertex-logo.png',
+      mockups: [getAssetPath('mockups/vertex.png')],
+      logo: getAssetPath('logos/vertex-logo.png'),
+      hoverLogo: getAssetPath('logos/vertex-logo.png'),
       color: '#3EA3A9'
     },
     {
@@ -107,9 +108,9 @@ const ProjectsGrid = () => {
       letter: 'R',
       title: 'Riverton Group',
       description: 'A complete redesign of the brand identity and landing page, supported by UX research',
-      mockups: ['/knowledge-base/mockups/rivertong-mockup.png?v=2'],
-      logo: '/knowledge-base/logos/riverton-logo.png',
-      hoverLogo: '/knowledge-base/logos/riverton-logo.png',
+      mockups: [getAssetPath('mockups/rivertong-mockup.png?v=2')],
+      logo: getAssetPath('logos/riverton-logo.png'),
+      hoverLogo: getAssetPath('logos/riverton-logo.png'),
       color: '#103FD3'
     },
     {
@@ -121,9 +122,9 @@ const ProjectsGrid = () => {
       letter: 'O',
       title: 'Open Kharkiv',
       description: 'A redesign of a civic technology mobile application, improving usability, streamlining flows',
-      mockups: ['/knowledge-base/mockups/openkharkiv11.png'],
-      logo: '/knowledge-base/logos/openkharkiv-logo.png',
-      hoverLogo: '/knowledge-base/logos/openkharkiv-logo.png',
+      mockups: [getAssetPath('mockups/openkharkiv11.png')],
+      logo: getAssetPath('logos/openkharkiv-logo.png'),
+      hoverLogo: getAssetPath('logos/openkharkiv-logo.png'),
       color: '#19A05C'
     }
   ];
@@ -236,7 +237,7 @@ const ProjectsGrid = () => {
                    {clickedProject.title === 'Vertex Studio' && (
                      <div className="relative">
                        <img 
-                         src="/knowledge-base/logos/flag-logo.svg" 
+                         src={getAssetPath('logos/flag-logo.svg')} 
                          alt="UI Badge" 
                          className="w-6 h-10"
                        />
@@ -293,7 +294,7 @@ const ProjectsGrid = () => {
                    {clickedProject.title === 'Vertex Studio' && (
                      <div className="relative">
                        <img 
-                         src="/knowledge-base/logos/flag-logo.svg" 
+                         src={getAssetPath('logos/flag-logo.svg')} 
                          alt="UI Badge" 
                          className="w-6 h-10"
                        />

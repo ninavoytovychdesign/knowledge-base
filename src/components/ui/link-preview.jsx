@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getAssetPath } from "../../utils/assetPath";
 
 export function LinkPreview({ children, url, className = "" }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -28,7 +29,7 @@ export function LinkPreview({ children, url, className = "" }) {
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
                   <img
-                    src="/knowledge-base/podcast.png"
+                    src={getAssetPath('podcast.png')}
                     alt="Podcast Episode"
                     className="w-12 h-12 rounded-lg object-cover"
                   />

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { useLanguage } from "../lib/LanguageContext";
+import { getAssetPath } from "../utils/assetPath";
 
 export default function Header() {
   const location = useLocation();
@@ -62,7 +63,7 @@ export default function Header() {
           {/* Лого - ліва сторона */}
           <div className="h-6">
             <img 
-              src="/knowledge-base/logos/nina-logo.svg" 
+              src={getAssetPath('logos/nina-logo.svg')} 
               alt="Nina Voytovych Logo" 
               className="h-full w-auto"
             />
