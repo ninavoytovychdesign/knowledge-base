@@ -127,7 +127,7 @@ const ProjectsGrid = () => {
       letter: 'O',
       title: 'Open Kharkiv',
       description: 'A redesign of a civic technology mobile application, improving usability, streamlining flows',
-      mockups: [getAssetPath('mockups/openkharkiv1.png')],
+      mockups: [getAssetPath('mockups/openkharkiv11.png')],
       logo: getAssetPath('logos/openkharkiv-logo.png'),
       hoverLogo: getAssetPath('logos/openkharkiv-logo.png'),
       color: '#19A05C'
@@ -254,22 +254,6 @@ const ProjectsGrid = () => {
                    {clickedProject.title}
                  </h3>
                  
-                 {/* Mockup Container */}
-                 <div className="flex-1 flex items-center justify-center px-3 py-3 rounded overflow-hidden mb-3">
-                  {(() => {
-                    console.log('Project:', clickedProject.title, 'Key:', clickedProject.key);
-                    return clickedProject.title !== 'Open Kharkiv' && clickedProject.key !== 'openKharkiv';
-                  })() && (
-                    <img
-                      src={clickedProject.mockups[0]}
-                      alt={`${clickedProject.title} mockup`}
-                      className="w-full h-auto object-contain scale-75"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                      }}
-                    />
-                  )}
-                </div>
                 
                  {/* Description */}
                  <p className="text-[#CCCCCC] text-[12px] sm:text-[14px] font-helvetica leading-[140%] mb-6">
@@ -317,18 +301,16 @@ const ProjectsGrid = () => {
                  </h3>
                  
                  {/* Mockup Container */}
-                 {clickedProject.title !== 'Open Kharkiv' && (
-                   <div className="flex-1 flex items-center justify-center rounded overflow-hidden mb-3">
-                     <img
-                       src={clickedProject.mockups[0]}
-                       alt={`${clickedProject.title} mockup`}
-                       className="w-full h-auto object-contain scale-75"
-                       onError={(e) => {
-                         e.target.style.display = 'none';
-                       }}
-                     />
-                   </div>
-                 )}
+                 <div className="flex-1 flex items-center justify-center rounded overflow-hidden mb-3">
+                   <img
+                     src={clickedProject.mockups[0]}
+                     alt={`${clickedProject.title} mockup`}
+                     className="w-full h-auto object-contain scale-75"
+                     onError={(e) => {
+                       e.target.style.display = 'none';
+                     }}
+                   />
+                 </div>
 
                  {/* Description */}
                  <p className="text-[#CCCCCC] text-[12px] sm:text-[14px] font-helvetica leading-[140%] mb-6">
