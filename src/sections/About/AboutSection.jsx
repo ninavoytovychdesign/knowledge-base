@@ -94,26 +94,15 @@ export default function AboutSection() {
 
       {/* Photo - positioned separately on the right, aligned with Behance icon */}
       <div className="absolute top-[120px] right-[-200px] lg:right-[-300px] xl:right-[-400px]">
-        <PixelatedCanvas
-          src={getAssetPath('nina-photo.jpg')}
-          width={300}
-          height={300}
-          cellSize={4}
-          dotScale={0.9}
-          shape="square"
-          backgroundColor="#000000"
-          dropoutStrength={0.3}
-          interactive={true}
-          distortionStrength={2}
-          distortionRadius={100}
-          distortionMode="swirl"
-          followSpeed={0.2}
-          jitterStrength={2}
-          jitterSpeed={3}
-          sampleAverage={true}
-          tintColor="#FFFFFF"
-          tintStrength={0.1}
-          className="rounded-lg border border-[#1A1A1A]"
+        {/* Fallback to regular image if pixelated canvas doesn't work */}
+        <img 
+          src={getAssetPath('nina-photo.jpg')} 
+          alt="Nina Voytovych" 
+          className="w-[300px] h-[300px] object-cover rounded-lg border border-[#1A1A1A]"
+          onError={(e) => {
+            console.error("Image failed to load:", getAssetPath('nina-photo.jpg'));
+            e.target.style.display = 'none';
+          }}
         />
       </div>
 
