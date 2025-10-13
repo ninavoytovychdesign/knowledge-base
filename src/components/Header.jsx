@@ -62,7 +62,7 @@ export default function Header() {
           {/* Лого - ліва сторона */}
           <div className="h-6">
             <img 
-              src="/logos/nina-logo.svg" 
+              src="./logos/nina-logo.svg" 
               alt="Nina Voytovych Logo" 
               className="h-full w-auto"
             />
