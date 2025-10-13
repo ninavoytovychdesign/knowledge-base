@@ -47,25 +47,25 @@ export default function AboutSection() {
   const certificates = [
     {
       id: 1,
-      image: './certificate1.png',
+      image: '/knowledge-base/certificate1.png',
       title: 'UX Research Fundamentals',
       institution: 'Projector Institute'
     },
     {
       id: 2,
-      image: './certificate2.png',
+      image: '/knowledge-base/certificate2.png',
       title: 'UI Design Principles',
       institution: 'Projector Institute'
     },
     {
       id: 3,
-      image: './certificate3.png',
+      image: '/knowledge-base/certificate3.png',
       title: 'Design Systems',
       institution: 'Projector Institute'
     },
     {
       id: 4,
-      image: './certificate4.png',
+      image: '/knowledge-base/certificate4.png',
       title: 'Advanced UX Methods',
       institution: 'Projector Institute'
     }

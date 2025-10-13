@@ -64,7 +64,7 @@ const ProjectsGrid = () => {
       letter: 'N',
       title: 'Nova Post',
       description: 'Comprehensive UX research of the business account dashboard aimed at identifying user pain points',
-      mockups: ['./mockups/novapost-mockup.png'],
+      mockups: ['/knowledge-base/mockups/novapost-mockup.png'],
       logo: '/knowledge-base/logos/novapost-logo.png',
       hoverLogo: '/knowledge-base/logos/novapost-logo.png',
       color: '#DA292B'
@@ -78,7 +78,7 @@ const ProjectsGrid = () => {
       letter: 'H',
       title: 'HealthPad',
       description: 'A self-initiated mobile application — a digital health record for the whole family',
-      mockups: ['./mockups/healthpad-mockup.png'],
+      mockups: ['/knowledge-base/mockups/healthpad-mockup.png'],
       logo: '/knowledge-base/logos/healthpad-logo.png',
       hoverLogo: '/knowledge-base/logos/healthpad-logo.png',
       color: '#11B6E2'
@@ -93,7 +93,7 @@ const ProjectsGrid = () => {
       letter: 'V',
       title: 'Vertex Studio',
       description: 'A visual identity and website concept for a creative studio, showcasing a modern and elegant approach',
-      mockups: ['./mockups/vertex.png'],
+      mockups: ['/knowledge-base/mockups/vertex.png'],
       logo: '/knowledge-base/logos/vertex-logo.png',
       hoverLogo: '/knowledge-base/logos/vertex-logo.png',
       color: '#3EA3A9'
@@ -107,7 +107,7 @@ const ProjectsGrid = () => {
       letter: 'R',
       title: 'Riverton Group',
       description: 'A complete redesign of the brand identity and landing page, supported by UX research',
-      mockups: ['./mockups/rivertong-mockup.png?v=2'],
+      mockups: ['/knowledge-base/mockups/rivertong-mockup.png?v=2'],
       logo: '/knowledge-base/logos/riverton-logo.png',
       hoverLogo: '/knowledge-base/logos/riverton-logo.png',
       color: '#103FD3'
@@ -121,7 +121,7 @@ const ProjectsGrid = () => {
       letter: 'O',
       title: 'Open Kharkiv',
       description: 'A redesign of a civic technology mobile application, improving usability, streamlining flows',
-      mockups: ['./mockups/openkharkiv11.png'],
+      mockups: ['/knowledge-base/mockups/openkharkiv11.png'],
       logo: '/knowledge-base/logos/openkharkiv-logo.png',
       hoverLogo: '/knowledge-base/logos/openkharkiv-logo.png',
       color: '#19A05C'

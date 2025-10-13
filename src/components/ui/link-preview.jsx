@@ -28,7 +28,7 @@ export function LinkPreview({ children, url, className = "" }) {
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
                   <img
-                    src="./podcast.png"
+                    src="/knowledge-base/podcast.png"
                     alt="Podcast Episode"
                     className="w-12 h-12 rounded-lg object-cover"
                   />
