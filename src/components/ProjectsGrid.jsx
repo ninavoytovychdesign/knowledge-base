@@ -188,19 +188,18 @@ const ProjectsGrid = () => {
           >
           </div>
           
-          {/* Project Label - Always Visible */}
-          <div className="relative mt-2 px-0 py-2 text-white text-[12px] sm:text-[14px] font-helvetica pointer-events-none w-[120px] sm:w-[150px] text-left">
-            <div className="font-medium font-helvetica">{project.title}</div>
-            {/* Description appears on hover */}
-            {hoveredProject?.id === project.id && (
+          {/* Project Label - Only visible on hover */}
+          {hoveredProject?.id === project.id && (
+            <div className="relative mt-2 px-0 py-2 text-white text-[12px] sm:text-[14px] font-helvetica pointer-events-none w-[120px] sm:w-[150px] text-left">
+              <div className="font-medium font-helvetica">{project.title}</div>
               <div className="text-[12px] opacity-80 mt-1">
                 {t(`projects.${project.key}.labelDescription`)}
               </div>
-            )}
-          </div>
-           </div>
-         );
-       })}
+            </div>
+          )}
+             </div>
+           );
+         })}
       
       {/* Blur background overlay */}
       {clickedProject && (
