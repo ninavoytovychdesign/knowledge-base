@@ -272,7 +272,7 @@ const ProjectsGrid = () => {
                 </p>
                 
                  {/* View Project Button */}
-                 <button className="w-full flex items-center justify-between px-3 sm:px-4 py-2 rounded-lg font-medium text-black bg-white hover:opacity-90 transition font-helvetica text-[12px] sm:text-[14px]">
+                 <button className="w-full flex items-center justify-between px-3 sm:px-4 py-2 rounded-lg font-medium text-[#777777] bg-transparent border border-[#1A1A1A] hover:border-[#333333] transition font-helvetica text-[12px] sm:text-[14px] cursor-not-allowed" disabled>
                   <span>{t('viewMore')}</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -329,7 +329,7 @@ const ProjectsGrid = () => {
                 </p>
                 
                  {/* View Project Button */}
-                 <button className="w-full flex items-center justify-between px-3 sm:px-4 py-2 rounded-lg font-medium text-black bg-white hover:opacity-90 transition font-helvetica text-[12px] sm:text-[14px]">
+                 <button className="w-full flex items-center justify-between px-3 sm:px-4 py-2 rounded-lg font-medium text-[#777777] bg-transparent border border-[#1A1A1A] hover:border-[#333333] transition font-helvetica text-[12px] sm:text-[14px] cursor-not-allowed" disabled>
                   <span>{t('viewMore')}</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
