@@ -259,7 +259,9 @@ const ProjectsGrid = () => {
                   <img
                     src={clickedProject.mockups[0]}
                     alt={`${clickedProject.title} mockup`}
-                    className="w-full h-auto object-contain scale-75"
+                    className={`w-full h-auto object-contain ${
+                      clickedProject.title === 'Open Kharkiv' ? 'max-h-[300px]' : 'scale-75'
+                    }`}
                     onError={(e) => {
                       e.target.style.display = 'none';
                     }}
