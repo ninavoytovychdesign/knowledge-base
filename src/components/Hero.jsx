@@ -13,7 +13,7 @@ export function Hero() {
       setTitleVisible(true);
       
       // Хаотичне з'явлення літер
-      const titleText = t('heroTitleHighlight') + ' ' + t('heroTitleLine2');
+      const titleText = t('heroTitleHighlight') + t('heroTitleLine2');
       const totalLetters = titleText.length;
       const visibleLetters = [];
       
