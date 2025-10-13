@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../lib/LanguageContext";
 import { getAssetPath } from "../../utils/assetPath";
-import { PixelatedCanvas } from "../../components/ui/pixelated-canvas";
 
 export default function AboutSection() {
   const { t } = useLanguage();
@@ -90,20 +89,6 @@ export default function AboutSection() {
         <p>
           {t('aboutText3')}
         </p>
-      </div>
-
-      {/* Photo - positioned separately on the right, aligned with Behance icon */}
-      <div className="absolute top-[120px] right-[-200px] lg:right-[-300px] xl:right-[-400px]">
-        {/* Fallback to regular image if pixelated canvas doesn't work */}
-        <img 
-          src={getAssetPath('nina-photo.jpg')} 
-          alt="Nina Voytovych" 
-          className="w-[300px] h-[300px] object-cover rounded-lg border border-[#1A1A1A]"
-          onError={(e) => {
-            console.error("Image failed to load:", getAssetPath('nina-photo.jpg'));
-            e.target.style.display = 'none';
-          }}
-        />
       </div>
 
       {/* Spotify Card */}
