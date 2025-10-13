@@ -7,8 +7,8 @@ export const translations = {
     
     // Hero Section
     heroTitle: "Nina Voytovych — UI/UX designer shaping digital products through clarity, empathy, and precision.",
-    heroTitleHighlight: "Nina Voytovych — UI/UX designer",
-    heroTitleLine2: "shaping digital products through clarity, empathy, and precision",
+    heroTitleHighlight: "UI/UX designer shaping digital products through",
+    heroTitleLine2: "clarity, empathy, and precision",
     heroTitleLine3: "",
     heroSubtitle: "",
     
@@ -78,8 +78,8 @@ export const translations = {
     
     // Hero Section
     heroTitle: "Ніна Войтович — UI/UX дизайнер, що формує цифрові продукти через ясність, емпатію та точність.",
-    heroTitleHighlight: "Ніна Войтович — UI/UX дизайнер",
-    heroTitleLine2: "що формує цифрові продукти через ясність, емпатію та точність.",
+    heroTitleHighlight: "UI/UX дизайнер, що формує цифрові продукти через",
+    heroTitleLine2: "ясність, емпатію та точність.",
     heroTitleLine3: "",
     heroSubtitle: "",
     
@@ -149,8 +149,8 @@ export const translations = {
     
     // Hero Section
     heroTitle: "Nina Voytovych — UI/UX designer che plasma prodotti digitali attraverso chiarezza, empatia e precisione.",
-    heroTitleHighlight: "Nina Voytovych — UI/UX designer",
-    heroTitleLine2: "che plasma prodotti digitali attraverso chiarezza, empatia e precisione.",
+    heroTitleHighlight: "UI/UX designer che plasma prodotti digitali attraverso",
+    heroTitleLine2: "chiarezza, empatia e precisione.",
     heroTitleLine3: "",
     heroSubtitle: "",
     
