@@ -207,7 +207,7 @@ const ProjectsGrid = () => {
          })}
       
       {/* Blur background overlay */}
-      {clickedProject && (
+      {clickedProject && clickedProject.title !== 'Open Kharkiv' && (
         <div 
           className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 cursor-pointer" 
           onClick={() => setClickedProject(null)}
@@ -215,7 +215,7 @@ const ProjectsGrid = () => {
       )}
       
       {/* Modal tooltip */}
-      {clickedProject && (
+      {clickedProject && clickedProject.title !== 'Open Kharkiv' && (
         <div
           className="fixed z-50"
           style={getModalPosition()}
