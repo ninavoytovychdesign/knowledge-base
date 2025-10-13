@@ -256,7 +256,10 @@ const ProjectsGrid = () => {
                  
                  {/* Mockup Container */}
                  <div className="flex-1 flex items-center justify-center px-3 py-3 rounded overflow-hidden mb-3">
-                  {clickedProject.title !== 'Open Kharkiv' && clickedProject.key !== 'openKharkiv' && (
+                  {(() => {
+                    console.log('Project:', clickedProject.title, 'Key:', clickedProject.key);
+                    return clickedProject.title !== 'Open Kharkiv' && clickedProject.key !== 'openKharkiv';
+                  })() && (
                     <img
                       src={clickedProject.mockups[0]}
                       alt={`${clickedProject.title} mockup`}
