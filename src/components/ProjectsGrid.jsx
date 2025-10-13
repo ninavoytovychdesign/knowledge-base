@@ -223,7 +223,7 @@ const ProjectsGrid = () => {
         >
                  <div className="bg-[#141414]/30 border border-[#1A1A1A] rounded-lg p-3 sm:p-4 shadow-2xl w-[280px] sm:w-[400px] h-[800px] backdrop-blur-sm">
              {clickedProject.title === 'HealthPad' ? (
-               /* Open Kharkiv - Auto Layout Container */
+               /* HealthPad - Auto Layout Container */
                <div className="flex flex-col h-full">
                  {/* Logo and UI Badge at the top */}
                  <div className="flex justify-between items-center mb-4">
