@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Home from './pages/Home.jsx';
@@ -12,7 +12,7 @@ function AppContent() {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(() => {
     // Показуємо лоадер тільки при першому відкритті головної сторінки
-    const isHomePage = location.pathname === '/';
+    const isHomePage = location.pathname === '/' || location.pathname === '';
     const hasSeenLoader = localStorage.getItem('homeLoaded');
     const shouldShowLoader = isHomePage && !hasSeenLoader;
     
