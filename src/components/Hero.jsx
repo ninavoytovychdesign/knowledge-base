@@ -66,7 +66,7 @@ export function Hero() {
         <div className={`inline-block text-[16px] font-medium text-textPrimary font-helvetica mb-3 px-4 py-1 bg-[#141414]/30 border border-[#1A1A1A] rounded-[50px] transition-all duration-1000 ease-out ${
           titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          Nina Voytovych
+          {t('heroName')}
         </div>
         
         {/* Основний тайтл */}

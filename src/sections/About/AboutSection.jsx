@@ -93,11 +93,11 @@ export default function AboutSection() {
 
       {/* Spotify Card */}
       <div className="mt-[60px]">
-        <div className="bg-[#141414]/60 border border-[#1A1A1A] rounded-lg p-4 sm:p-6">
+        <div className="bg-[#141414]/30 border border-[#1A1A1A] rounded-lg p-4 sm:p-6 backdrop-blur-md">
           <div className="flex flex-col items-start relative">
             <img src={getAssetPath('logos/spotify-logo.svg.png')} alt="Spotify Logo" className="w-[120px] h-[40px] object-contain mb-3" />
             <div className="flex flex-col items-start text-left">
-              <h3 className="text-white text-[16px] font-medium font-helvetica">Junior's Diary</h3>
+              <h3 className="text-white text-[16px] font-medium font-helvetica">Junior&apos;s Diary</h3>
               <p className="text-textSecondary text-[14px] font-helvetica">Podcast Guest</p>
             </div>
                    <button 

@@ -11,6 +11,7 @@ module.exports = {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
         'helvetica': ['Helvetica', 'Arial', 'sans-serif'],
         'montserrat-subrayada': ['Montserrat Subrayada', 'cursive'],
+        'urbanist': ['Urbanist', 'sans-serif'],
       },
       colors: {
         // Brand colors
@@ -123,8 +124,198 @@ module.exports = {
                  },
                },
                
+               '@keyframes orbit': {
+                 '0%': {
+                   'transform': 'rotate(0deg) translateX(100px) rotate(0deg)',
+                 },
+                 '100%': {
+                   'transform': 'rotate(360deg) translateX(100px) rotate(-360deg)',
+                 },
+               },
+               
+               '@keyframes orbit-slow': {
+                 '0%': {
+                   'transform': 'rotate(0deg) translateX(80px) rotate(0deg)',
+                 },
+                 '100%': {
+                   'transform': 'rotate(360deg) translateX(80px) rotate(-360deg)',
+                 },
+               },
+               
+               '@keyframes orbit-fast': {
+                 '0%': {
+                   'transform': 'rotate(0deg) translateX(120px) rotate(0deg)',
+                 },
+                 '100%': {
+                   'transform': 'rotate(360deg) translateX(120px) rotate(-360deg)',
+                 },
+               },
+               
+               '@keyframes orbit-reverse': {
+                 '0%': {
+                   'transform': 'rotate(360deg) translateX(100px) rotate(-360deg)',
+                 },
+                 '100%': {
+                   'transform': 'rotate(0deg) translateX(100px) rotate(0deg)',
+                 },
+               },
+               
+               '@keyframes orbit-title': {
+                 '0%': {
+                   'transform': 'rotate(0deg) translateX(60px) rotate(0deg)',
+                 },
+                 '100%': {
+                   'transform': 'rotate(360deg) translateX(60px) rotate(-360deg)',
+                 },
+               },
+               
+               '@keyframes orbit-sun-mercury': {
+                 '0%': {
+                   'transform': 'rotate(0deg) translateX(120px) translateY(0px) rotate(0deg)',
+                 },
+                 '25%': {
+                   'transform': 'rotate(90deg) translateX(120px) translateY(40px) rotate(-90deg)',
+                 },
+                 '50%': {
+                   'transform': 'rotate(180deg) translateX(120px) translateY(0px) rotate(-180deg)',
+                 },
+                 '75%': {
+                   'transform': 'rotate(270deg) translateX(120px) translateY(-40px) rotate(-270deg)',
+                 },
+                 '100%': {
+                   'transform': 'rotate(360deg) translateX(120px) translateY(0px) rotate(-360deg)',
+                 },
+               },
+               
+               '@keyframes orbit-sun-venus': {
+                 '0%': {
+                   'transform': 'rotate(0deg) translateX(160px) translateY(0px) rotate(0deg)',
+                 },
+                 '25%': {
+                   'transform': 'rotate(90deg) translateX(160px) translateY(60px) rotate(-90deg)',
+                 },
+                 '50%': {
+                   'transform': 'rotate(180deg) translateX(160px) translateY(0px) rotate(-180deg)',
+                 },
+                 '75%': {
+                   'transform': 'rotate(270deg) translateX(160px) translateY(-60px) rotate(-270deg)',
+                 },
+                 '100%': {
+                   'transform': 'rotate(360deg) translateX(160px) translateY(0px) rotate(-360deg)',
+                 },
+               },
+               
+               '@keyframes orbit-sun-earth': {
+                 '0%': {
+                   'transform': 'rotate(0deg) translateX(200px) translateY(0px) rotate(0deg)',
+                 },
+                 '25%': {
+                   'transform': 'rotate(90deg) translateX(200px) translateY(80px) rotate(-90deg)',
+                 },
+                 '50%': {
+                   'transform': 'rotate(180deg) translateX(200px) translateY(0px) rotate(-180deg)',
+                 },
+                 '75%': {
+                   'transform': 'rotate(270deg) translateX(200px) translateY(-80px) rotate(-270deg)',
+                 },
+                 '100%': {
+                   'transform': 'rotate(360deg) translateX(200px) translateY(0px) rotate(-360deg)',
+                 },
+               },
+               
+               '@keyframes orbit-sun-mars': {
+                 '0%': {
+                   'transform': 'rotate(0deg) translateX(240px) translateY(0px) rotate(0deg)',
+                 },
+                 '25%': {
+                   'transform': 'rotate(90deg) translateX(240px) translateY(100px) rotate(-90deg)',
+                 },
+                 '50%': {
+                   'transform': 'rotate(180deg) translateX(240px) translateY(0px) rotate(-180deg)',
+                 },
+                 '75%': {
+                   'transform': 'rotate(270deg) translateX(240px) translateY(-100px) rotate(-270deg)',
+                 },
+                 '100%': {
+                   'transform': 'rotate(360deg) translateX(240px) translateY(0px) rotate(-360deg)',
+                 },
+               },
+               
+               '@keyframes orbit-sun-jupiter': {
+                 '0%': {
+                   'transform': 'rotate(0deg) translateX(280px) translateY(0px) rotate(0deg)',
+                 },
+                 '25%': {
+                   'transform': 'rotate(90deg) translateX(280px) translateY(120px) rotate(-90deg)',
+                 },
+                 '50%': {
+                   'transform': 'rotate(180deg) translateX(280px) translateY(0px) rotate(-180deg)',
+                 },
+                 '75%': {
+                   'transform': 'rotate(270deg) translateX(280px) translateY(-120px) rotate(-270deg)',
+                 },
+                 '100%': {
+                   'transform': 'rotate(360deg) translateX(280px) translateY(0px) rotate(-360deg)',
+                 },
+               },
+               
                '.animate-float-slow': {
                  'animation': 'float-slow 25s ease-in-out infinite',
+               },
+               
+               '.animate-orbit': {
+                 'animation': 'orbit 3s linear infinite',
+               },
+               
+               '.animate-orbit-slow': {
+                 'animation': 'orbit-slow 4s linear infinite',
+               },
+               
+               '.animate-orbit-fast': {
+                 'animation': 'orbit-fast 2s linear infinite',
+               },
+               
+               '.animate-orbit-reverse': {
+                 'animation': 'orbit-reverse 3s linear infinite',
+               },
+               
+               '@keyframes rocket-trail': {
+                 '0%': {
+                   'transform': 'scaleY(0)',
+                   'opacity': '0',
+                 },
+                 '50%': {
+                   'transform': 'scaleY(1)',
+                   'opacity': '1',
+                 },
+                 '100%': {
+                   'transform': 'scaleY(1.5)',
+                   'opacity': '0',
+                 },
+               },
+               
+               '.animate-rocket-trail': {
+                 'animation': 'rocket-trail 2s ease-out infinite',
+               },
+               
+               '.animate-orbit-sun-mercury': {
+                 'animation': 'orbit-sun-mercury 2s linear infinite',
+               },
+               
+               '.animate-orbit-sun-venus': {
+                 'animation': 'orbit-sun-venus 3s linear infinite',
+               },
+               
+               '.animate-orbit-sun-earth': {
+                 'animation': 'orbit-sun-earth 4s linear infinite',
+               },
+               
+               '.animate-orbit-sun-mars': {
+                 'animation': 'orbit-sun-mars 5s linear infinite',
+               },
+               
+               '.animate-orbit-sun-jupiter': {
+                 'animation': 'orbit-sun-jupiter 6s linear infinite',
                },
         
         // Custom duration for certificate hover effect

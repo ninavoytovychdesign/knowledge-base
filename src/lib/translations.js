@@ -6,6 +6,7 @@ export const translations = {
     contacts: "Contacts",
     
     // Hero Section
+    heroName: "Nina Voytovych",
     heroTitle: "Nina Voytovych — UI/UX designer shaping digital products through clarity, empathy, and precision.",
     heroTitleHighlight: "UI/UX designer shaping digital products",
     heroTitleLine2: "through clarity, empathy, and precision",
@@ -16,27 +17,32 @@ export const translations = {
     projects: {
       novaPost: {
         title: "Nova Post",
-        description: "Comprehensive UX research of the business account dashboard aimed at identifying user pain points",
+        descriptionTitle: "Business Dashboard | UX Research",
+        description: "Conducted UX research for the business account interface to identify key usability pain points. Delivered detailed insights and recommendations that streamlined navigation and improved workflow efficiency.",
         labelDescription: "UX research of the business account"
       },
       healthPad: {
         title: "HealthPad", 
-        description: "A self-initiated mobile application — a digital health record for the whole family",
+        descriptionTitle: "HealthTech App | Pet Project",
+        description: "A personal side project — a digital health record for families with over 50 custom-designed screens. Focused on usability, clarity, and emotion — transforming health management into a simple, connected experience.",
         labelDescription: "Medical mobile application"
       },
       vertexStudio: {
         title: "Vertex Studio",
-        description: "A visual identity and website concept for a creative studio, showcasing a modern and elegant approach",
+        descriptionTitle: "Creative Studio | Brand Concept",
+        description: "Developed a minimalistic landing and brand concept for a creative tech studio. Combined futuristic visual language with clean typography and grid-based layouts to emphasize innovation and precision.",
         labelDescription: "Design concept"
       },
       rivertonGroup: {
         title: "Riverton Group",
-        description: "A complete redesign of the brand identity and landing page, supported by UX research",
+        descriptionTitle: "Corporate Brand | Complete Redesign",
+        description: "Redesigned Riverton Group's brand identity and landing page to reflect a more refined, trustworthy image for the investment sector. My focus was on clean visual hierarchy, UX clarity, and modern minimalism that increased engagement and trust.",
         labelDescription: "Branding, Landing design & UX research"
       },
       openKharkiv: {
         title: "Open Kharkiv",
-        description: "A redesign of a civic technology mobile application, improving usability, streamlining flows",
+        descriptionTitle: "Civic Tech Mobile App | Redesign",
+        description: "Redesigned the civic app Open Kharkiv, improving UX logic and accessibility. Collaborated with developers to implement updated flows, creating a smoother city-service experience for users.",
         labelDescription: "Mobile app redesign & UX update"
       }
     },
@@ -77,6 +83,7 @@ export const translations = {
     contacts: "Контакти",
     
     // Hero Section
+    heroName: "Ніна Войтович",
     heroTitle: "Ніна Войтович — UI/UX дизайнер, що формує цифрові продукти через ясність, емпатію та точність.",
     heroTitleHighlight: "UI/UX дизайнер, що формує цифрові продукти",
     heroTitleLine2: "через ясність, емпатію та точність.",
@@ -87,27 +94,32 @@ export const translations = {
     projects: {
       novaPost: {
         title: "Нова Пошта",
-        description: "Комплексне UX дослідження панелі бізнес-акаунту з метою виявлення болючих точок користувачів",
+        descriptionTitle: "Бізнес Панель | UX Дослідження",
+        description: "Проведено UX дослідження інтерфейсу бізнес-акаунту для виявлення ключових болючих точок зручності використання. Надано детальні інсайти та рекомендації, які спростили навігацію та покращили ефективність робочих процесів.",
         labelDescription: "UX дослідження бізнес-акаунту"
       },
       healthPad: {
         title: "HealthPad",
-        description: "Самостійно ініційований мобільний додаток — цифрова медична картка для всієї родини",
+        descriptionTitle: "HealthTech Додаток | Особистий Проект",
+        description: "Особистий побічний проект — цифрова медична картка для сімей з понад 50 індивідуально розробленими екранами. Зосереджений на зручності, ясності та емоціях — перетворюючи управління здоров'ям на простий, пов'язаний досвід.",
         labelDescription: "Медичний мобільний додаток"
       },
       vertexStudio: {
         title: "Vertex Studio", 
-        description: "Візуальна ідентичність та концепція веб-сайту для креативної студії, що демонструє сучасний та елегантний підхід",
+        descriptionTitle: "Креативна Студія | Бренд Концепт",
+        description: "Розробив мінімалістичний лендінг та бренд-концепт для креативної технологічної студії. Поєднав футуристичну візуальну мову з чистою типографікою та сітковими макетами для підкреслення інноваційності та точності.",
         labelDescription: "Дизайн концепт"
       },
       rivertonGroup: {
         title: "Riverton Group",
-        description: "Повний редизайн фірмового стилю та лендінгу, підкріплений UX дослідженням",
+        descriptionTitle: "Корпоративний Бренд | Повний Редизайн",
+        description: "Редизайн фірмового стилю та лендінгу Riverton Group для відображення більш витонченого, надійного іміджу в інвестиційному секторі. Мій фокус був на чистій візуальній ієрархії, ясності UX та сучасному мінімалізмі, що підвищило залучення та довіру.",
         labelDescription: "Брендинг, дизайн лендінгу та UX дослідження"
       },
       openKharkiv: {
         title: "Відкритий Харків",
-        description: "Редизайн мобільного додатку громадських технологій, покращення зручності використання та оптимізація потоків",
+        descriptionTitle: "Громадський Технологічний Мобільний Додаток | Редизайн",
+        description: "Редизайн громадського додатку \"Відкритий Харків\", покращив UX логіку та доступність. Співпрацював з розробниками для впровадження оновлених потоків, створюючи більш плавний досвід міських послуг для користувачів.",
         labelDescription: "Редизайн моб додатку та оновлення UX"
       }
     },
@@ -148,6 +160,7 @@ export const translations = {
     contacts: "Contatti",
     
     // Hero Section
+    heroName: "Nina Voytovych",
     heroTitle: "Nina Voytovych — UI/UX designer che plasma prodotti digitali attraverso chiarezza, empatia e precisione.",
     heroTitleHighlight: "UI/UX designer che plasma prodotti digitali",
     heroTitleLine2: "attraverso chiarezza, empatia e precisione.",
@@ -158,27 +171,32 @@ export const translations = {
     projects: {
       novaPost: {
         title: "Nova Post",
-        description: "Ricerca UX completa del dashboard dell'account aziendale mirata a identificare i punti critici degli utenti",
+        descriptionTitle: "Dashboard Aziendale | Ricerca UX",
+        description: "Condotta ricerca UX per l'interfaccia dell'account aziendale per identificare i punti critici chiave dell'usabilità. Forniti insights dettagliati e raccomandazioni che hanno semplificato la navigazione e migliorato l'efficienza del flusso di lavoro.",
         labelDescription: "Ricerca UX dell'account aziendale"
       },
       healthPad: {
         title: "HealthPad",
-        description: "Un'applicazione mobile auto-iniziata — una cartella sanitaria digitale per tutta la famiglia",
+        descriptionTitle: "App HealthTech | Progetto Personale",
+        description: "Un progetto personale secondario — una cartella sanitaria digitale per famiglie con oltre 50 schermi progettati su misura. Focalizzato su usabilità, chiarezza ed emozione — trasformando la gestione della salute in un'esperienza semplice e connessa.",
         labelDescription: "Applicazione mobile medica"
       },
       vertexStudio: {
         title: "Vertex Studio",
-        description: "Un'identità visiva e concetto di sito web per uno studio creativo, che mostra un approccio moderno ed elegante",
+        descriptionTitle: "Studio Creativo | Concept Brand",
+        description: "Sviluppato un landing minimalista e concept di brand per uno studio tech creativo. Combinato linguaggio visivo futuristico con tipografia pulita e layout basati su griglia per enfatizzare innovazione e precisione.",
         labelDescription: "Concept di design"
       },
       rivertonGroup: {
         title: "Riverton Group", 
-        description: "Un redesign completo dell'identità del brand e della landing page, supportato da ricerca UX",
+        descriptionTitle: "Brand Aziendale | Redesign Completo",
+        description: "Ridisegnato l'identità del brand e la landing page di Riverton Group per riflettere un'immagine più raffinata e affidabile nel settore degli investimenti. Il mio focus è stato su una gerarchia visiva pulita, chiarezza UX e minimalismo moderno che ha aumentato engagement e fiducia.",
         labelDescription: "Branding, design landing & ricerca UX"
       },
       openKharkiv: {
         title: "Open Kharkiv",
-        description: "Un redesign di un'applicazione mobile di tecnologia civica, migliorando l'usabilità e semplificando i flussi",
+        descriptionTitle: "App Mobile Civic Tech | Redesign",
+        description: "Ridisegnato l'app civica Open Kharkiv, migliorando la logica UX e l'accessibilità. Collaborato con gli sviluppatori per implementare flussi aggiornati, creando un'esperienza più fluida per i servizi cittadini per gli utenti.",
         labelDescription: "Redesign app mobile & aggiornamento UX"
       }
     },

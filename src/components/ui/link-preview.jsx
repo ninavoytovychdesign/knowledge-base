@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAssetPath } from "../../utils/assetPath";
 
-export function LinkPreview({ children, url, className = "" }) {
+export function LinkPreview({ children, className = "" }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

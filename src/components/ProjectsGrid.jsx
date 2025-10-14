@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../lib/LanguageContext';
 import { getAssetPath } from '../utils/assetPath';
 
@@ -7,47 +6,24 @@ const ProjectsGrid = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [clickedProject, setClickedProject] = useState(null);
   const [hoveredProject, setHoveredProject] = useState(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [, setMousePosition] = useState({ x: 0, y: 0 });
   const { t } = useLanguage();
 
-  // Calculate modal position aligned to the right edge and centered vertically
+  // Calculate modal position centered on screen
   const getModalPosition = () => {
-    if (!clickedProject) return { right: 0, top: 0 };
+    if (!clickedProject) return { left: 0, top: 0 };
     
     // Check if window is available (for SSR)
     if (typeof window === 'undefined') {
-      return { right: 24, top: '50%', transform: 'translateY(-50%)' };
+      return { left: '50%', top: '50%', transform: 'translate(-50%, -50%)' };
     }
     
-    // Position modal aligned with Behance icon in footer
-    const modalWidth = 400;
-    const modalHeight = 800;
-    const footerPadding = 24; // px-6 = 24px padding in footer
-    
-    // Calculate right position to align with Behance icon
-    // Footer has max-w-[1440px] mx-auto px-6, so we need to account for this
-    const maxWidth = 1440;
-    const screenWidth = window.innerWidth;
-    const actualPadding = screenWidth > maxWidth ? (screenWidth - maxWidth) / 2 + footerPadding : footerPadding;
-    
-    let right = actualPadding;
-    
-    // Center modal vertically on screen
-    let top = (window.innerHeight - modalHeight) / 2;
-    
-    // Ensure modal doesn't go above header or below footer
-    const headerHeight = 64; // Header height
-    const footerHeight = 64; // Footer height
-    const minTop = headerHeight;
-    const maxTop = window.innerHeight - footerHeight - modalHeight;
-    
-    if (top < minTop) {
-      top = minTop;
-    } else if (top > maxTop) {
-      top = maxTop;
-    }
-    
-    return { right, top };
+    // Center modal both horizontally and vertically
+    return { 
+      left: '50%', 
+      top: '50%', 
+      transform: 'translate(-50%, -50%)' 
+    };
   };
 
   useEffect(() => {
@@ -152,17 +128,29 @@ const ProjectsGrid = () => {
                  transform: position.transform || 'none',
                }}
              >
+          {/* Orbital Effect - Around entire card and label */}
+          {hoveredProject?.id === project.id && (
+            <div className="absolute inset-0 pointer-events-none">
+              {/* Orbital Circle - covers card and label */}
+              <div className="absolute top-1/2 left-1/2 w-[200px] h-[200px] border border-[#333333] rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+              {/* Orbital Dot */}
+              <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-[#333333] rounded-full animate-orbit"></div>
+            </div>
+          )}
+          
           {/* Project Card */}
-          <div
-            className={`rounded-lg hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 cursor-pointer flex items-center justify-center overflow-hidden ${
-              !isVisible 
-                ? 'opacity-0' 
-                : clickedProject?.id === project.id 
-                  ? 'w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] blur-sm bg-[#141414]/60'
-                  : hoveredProject?.id === project.id 
-                    ? 'w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] blur-none bg-[#141414]/100'
-                    : 'w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] bg-[#141414]/60'
-            }`}
+          <div className="relative">
+            
+            <div
+              className={`rounded-lg hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 cursor-pointer flex items-center justify-center overflow-hidden ${
+                !isVisible 
+                  ? 'opacity-0' 
+                  : clickedProject?.id === project.id 
+                    ? 'w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] blur-sm bg-[#141414]/60'
+                    : hoveredProject?.id === project.id 
+                      ? 'w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] blur-none bg-[#141414]/100'
+                      : 'w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] bg-[#141414]/60'
+              }`}
             style={{
               backgroundColor: clickedProject?.id === project.id 
                 ? project.color 
@@ -192,14 +180,12 @@ const ProjectsGrid = () => {
             onMouseLeave={() => setHoveredProject(null)}
           >
           </div>
+          </div>
           
           {/* Project Label - Only visible on hover */}
           {hoveredProject?.id === project.id && (
-            <div className="relative mt-2 px-0 py-2 text-white text-[12px] sm:text-[14px] font-helvetica pointer-events-none w-[120px] sm:w-[150px] text-left">
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-0 py-1 text-white text-[12px] sm:text-[14px] font-helvetica pointer-events-none text-center whitespace-nowrap">
               <div className="font-medium font-helvetica">{project.title}</div>
-              <div className="text-[12px] opacity-80 mt-1">
-                {t(`projects.${project.key}.labelDescription`)}
-              </div>
             </div>
           )}
              </div>
@@ -221,7 +207,7 @@ const ProjectsGrid = () => {
           style={getModalPosition()}
           onClick={(e) => e.stopPropagation()}
         >
-                 <div className="bg-[#141414]/30 border border-[#1A1A1A] rounded-lg p-3 sm:p-4 shadow-2xl w-[280px] sm:w-[400px] h-[800px] backdrop-blur-sm">
+                 <div className="bg-[#141414]/30 border border-[#1A1A1A] rounded-lg p-3 sm:p-4 shadow-2xl w-[600px] h-[800px] backdrop-blur-md">
              {clickedProject.title === 'HealthPad' ? (
                /* HealthPad - Auto Layout Container */
                <div className="flex flex-col h-full">
@@ -259,7 +245,7 @@ const ProjectsGrid = () => {
                    <img
                      src={clickedProject.mockups[0]}
                      alt={`${clickedProject.title} mockup`}
-                     className="w-full h-auto object-contain scale-75"
+                     className="w-full h-auto max-h-[300px] object-contain scale-[1.5]"
                      onError={(e) => {
                        e.target.style.display = 'none';
                      }}
@@ -267,12 +253,17 @@ const ProjectsGrid = () => {
                  </div>
                  
                  {/* Description */}
-                 <p className="text-[#CCCCCC] text-[12px] sm:text-[14px] font-helvetica leading-[140%] mb-6">
-                   {t(`projects.${clickedProject.key}.description`)}
-                </p>
+                 <>
+                   <h4 className="text-textPrimary text-[14px] sm:text-[16px] font-medium font-helvetica mb-2">
+                     {t(`projects.${clickedProject.key}.descriptionTitle`)}
+                   </h4>
+                   <p className="text-textPrimary text-[12px] sm:text-[14px] font-helvetica leading-[140%] mb-6">
+                     {t(`projects.${clickedProject.key}.description`)}
+                   </p>
+                 </>
                 
                  {/* View Project Button */}
-                 <button className="w-full flex items-center justify-between px-3 sm:px-4 py-2 rounded-lg font-medium text-[#777777] bg-transparent border border-[#1A1A1A] hover:border-[#333333] transition font-helvetica text-[12px] sm:text-[14px] cursor-not-allowed" disabled>
+                 <button className="w-full flex items-center justify-between px-3 sm:px-4 py-2 rounded-lg font-medium text-[#777777] bg-[#1A1A1A] border border-[#1A1A1A] hover:border-[#333333] transition font-helvetica text-[12px] sm:text-[14px] cursor-not-allowed" disabled>
                   <span>{t('viewMore')}</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -312,11 +303,19 @@ const ProjectsGrid = () => {
                  </h3>
                  
                  {/* Mockup Container */}
-                 <div className="flex-1 flex items-center justify-center rounded overflow-hidden mb-3">
+                 <div className={`flex-1 flex items-center justify-center rounded overflow-hidden mb-3 ${
+                   clickedProject.title === 'Nova Post' ? 'items-center justify-center' : ''
+                 }`}>
                    <img
                      src={clickedProject.mockups[0]}
                      alt={`${clickedProject.title} mockup`}
-                     className="w-full h-auto object-contain scale-75"
+                     className={`w-full h-auto max-h-[300px] object-contain ${
+                       clickedProject.title === 'Nova Post' ? 'scale-[1.35] mx-auto' : 
+                       clickedProject.title === 'HealthPad' ? 'scale-[1.5]' :
+                       clickedProject.title === 'Open Kharkiv' ? 'scale-[1.5]' : 
+                       clickedProject.title === 'Riverton Group' ? 'scale-[1.5]' :
+                       clickedProject.title === 'Vertex Studio' ? 'scale-[1.5]' : 'scale-100'
+                     }`}
                      onError={(e) => {
                        e.target.style.display = 'none';
                      }}
@@ -324,12 +323,17 @@ const ProjectsGrid = () => {
                  </div>
 
                  {/* Description */}
-                 <p className="text-[#CCCCCC] text-[12px] sm:text-[14px] font-helvetica leading-[140%] mb-6">
-                   {t(`projects.${clickedProject.key}.description`)}
-                </p>
+                 <>
+                   <h4 className="text-textPrimary text-[14px] sm:text-[16px] font-medium font-helvetica mb-2">
+                     {t(`projects.${clickedProject.key}.descriptionTitle`)}
+                   </h4>
+                   <p className="text-textPrimary text-[12px] sm:text-[14px] font-helvetica leading-[140%] mb-6">
+                     {t(`projects.${clickedProject.key}.description`)}
+                   </p>
+                 </>
                 
                  {/* View Project Button */}
-                 <button className="w-full flex items-center justify-between px-3 sm:px-4 py-2 rounded-lg font-medium text-[#777777] bg-transparent border border-[#1A1A1A] hover:border-[#333333] transition font-helvetica text-[12px] sm:text-[14px] cursor-not-allowed" disabled>
+                 <button className="w-full flex items-center justify-between px-3 sm:px-4 py-2 rounded-lg font-medium text-[#777777] bg-[#1A1A1A] border border-[#1A1A1A] hover:border-[#333333] transition font-helvetica text-[12px] sm:text-[14px] cursor-not-allowed" disabled>
                   <span>{t('viewMore')}</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

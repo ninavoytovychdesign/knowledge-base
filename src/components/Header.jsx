@@ -73,25 +73,24 @@ export default function Header() {
           <div className="flex items-center gap-4 sm:gap-8">
             {/* Language Switcher - прихований на мобайлі */}
             <div className="relative group hidden sm:block">
-              <button className="flex items-center gap-2 px-3 py-1 rounded-lg bg-transparent hover:bg-[#1A1A1A] transition-colors duration-300">
-                <span className="text-sm text-textPrimary font-medium font-helvetica">{currentLanguage}</span>
+              <button className="flex items-center gap-2 px-3 py-1 rounded bg-transparent transition-colors duration-300">
+                <span className="text-sm text-textPrimary font-medium font-urbanist">{currentLanguage}</span>
                 <svg className="w-3 h-3 text-textSecondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               
               {/* Dropdown */}
-              <div className="absolute right-0 top-full mt-2 bg-[#141414] border border-[#1A1A1A] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="absolute right-0 top-full mt-2 bg-[#141414]/30 border border-[#1A1A1A] rounded shadow-lg backdrop-blur-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 w-full">
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
-                    className={`w-full flex items-center gap-3 px-4 py-2 text-sm font-helvetica hover:bg-[#1A1A1A] transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg ${
+                    className={`w-full flex items-center justify-center px-3 py-2 text-sm font-urbanist hover:bg-[#1A1A1A] transition-colors duration-200 first:rounded-t last:rounded-b ${
                       currentLanguage === lang.code ? 'text-textPrimary' : 'text-textSecondary'
                     }`}
                   >
-                    <span>{lang.flag}</span>
-                    <span className="whitespace-nowrap">{lang.name}</span>
+                    <span className="whitespace-nowrap">{lang.code}</span>
                   </button>
                 ))}
               </div>
@@ -99,7 +98,7 @@ export default function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden sm:block">
-              <ul className="flex gap-6 text-[16px] font-regular font-helvetica">
+              <ul className="flex gap-6 text-[16px] font-regular font-urbanist">
                 <li>
                   <Link 
                     to="/"
@@ -168,13 +167,13 @@ export default function Header() {
                 <button
                   key={lang.code}
                   onClick={() => handleLanguageChange(lang.code)}
-                  className={`px-3 py-1 rounded text-sm font-helvetica transition-colors duration-200 ${
+                  className={`px-3 py-1 rounded text-sm font-urbanist transition-colors duration-200 ${
                     currentLanguage === lang.code 
                       ? 'bg-[#1A1A1A] text-textPrimary' 
                       : 'text-textSecondary hover:text-textPrimary'
                   }`}
                 >
-                  {lang.flag} {lang.code}
+                  {lang.code}
                 </button>
               ))}
             </div>
@@ -187,7 +186,7 @@ export default function Header() {
                 <Link 
                   to="/"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-lg text-[16px] font-helvetica transition-colors duration-300 ${
+                  className={`block px-3 py-2 rounded-lg text-[16px] font-urbanist transition-colors duration-300 ${
                     activeSection === 'home' 
                       ? 'text-white bg-[#1A1A1A]' 
                       : 'text-textSecondary hover:text-textPrimary hover:bg-[#1A1A1A]'
@@ -200,7 +199,7 @@ export default function Header() {
                 <Link 
                   to="/about"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-lg text-[16px] font-helvetica transition-colors duration-300 ${
+                  className={`block px-3 py-2 rounded-lg text-[16px] font-urbanist transition-colors duration-300 ${
                     activeSection === 'about' 
                       ? 'text-white bg-[#1A1A1A]' 
                       : 'text-textSecondary hover:text-textPrimary hover:bg-[#1A1A1A]'
@@ -213,7 +212,7 @@ export default function Header() {
                 <Link 
                   to="/contacts"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-lg text-[16px] font-helvetica transition-colors duration-300 ${
+                  className={`block px-3 py-2 rounded-lg text-[16px] font-urbanist transition-colors duration-300 ${
                     activeSection === 'contacts' 
                       ? 'text-white bg-[#1A1A1A]' 
                       : 'text-textSecondary hover:text-textPrimary hover:bg-[#1A1A1A]'
