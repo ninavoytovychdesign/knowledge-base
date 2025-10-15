@@ -91,29 +91,31 @@ export default function AboutSection() {
         </p>
       </div>
 
-      {/* Spotify Card */}
-      <div className="mt-[60px]">
-        <div className="bg-[#141414]/30 border border-[#1A1A1A] rounded-lg p-4 sm:p-6 backdrop-blur-md">
-          <div className="flex flex-col items-start relative">
-            <img src={getAssetPath('logos/spotify-logo.svg.png')} alt="Spotify Logo" className="w-[120px] h-[40px] object-contain mb-3" />
-            <div className="flex flex-col items-start text-left">
-              <h3 className="text-white text-[16px] font-medium font-helvetica">Junior&apos;s Diary</h3>
-              <p className="text-textSecondary text-[14px] font-helvetica">Podcast Guest</p>
+      {/* Cards */}
+      <div className="mt-[60px] flex justify-start">
+        <div className="flex gap-6">
+          <div className="w-[288px] h-[288px] max-w-[288px] flex-shrink-0 inline-block">
+            <div className="relative bg-[#141414]/30 border border-[#1A1A1A] rounded-lg p-6 h-full flex flex-col items-center justify-center hover:bg-[#1A1A1A]/40 transition-all duration-300">
+              <img src={getAssetPath('logos/spotify-logo.svg.png')} alt="Spotify Logo" className="w-[160px] h-[60px] object-contain mb-4 mx-auto" />
+              <p className="text-white text-[12px] font-helvetica font-medium text-center">
+                Podcast Guest
+              </p>
             </div>
-                   <button 
-                     className="w-[36px] h-[36px] rounded-full bg-[#1A1A1A]/60 hover:bg-[#E6E6E6] hover:text-black transition flex items-center justify-center absolute top-0 right-0 group"
-                     onClick={() => window.open('https://open.spotify.com/episode/2LFjZ4nII3Z3iQDHqxlk0L?si=9133db58bd8f422d&nd=1&dlsi=27a591b0e5fb4461', '_blank')}
-                   >
-                     <svg className="w-4 h-4 text-white group-hover:text-black transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+          </div>
+          
+          <div className="w-[288px] h-[288px] max-w-[288px] flex-shrink-0 inline-block">
+            <div className="relative bg-[#141414]/30 border border-[#1A1A1A] rounded-lg p-6 h-full flex flex-col items-center justify-center hover:bg-[#1A1A1A]/40 transition-all duration-300">
+              <img src={getAssetPath('logos/projector-logo.png')} alt="Projector Logo" className="w-[160px] h-[60px] object-contain mb-4 mx-auto" />
+              <p className="text-white text-[12px] font-helvetica font-medium text-center">
+                My Certificates
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Certificates Section */}
-      <div className="mt-[60px]">
+      <div className="mt-[60px] hidden">
         <div className="text-left mb-6">
           <h2 className="text-[20px] sm:text-[24px] text-white font-helvetica font-medium">
             {renderAnimatedText(t('certificates'), 'text-white', t('aboutTitle').length)}

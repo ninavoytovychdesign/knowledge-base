@@ -325,19 +325,6 @@ module.exports = {
         '.duration-600': {
           'transition-duration': '600ms',
         },
-        '.ease-magnetic': {
-          'transition-timing-function': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-        },
-        '@keyframes electric-pulse': {
-          '0%, 100%': {
-            'box-shadow': '0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff',
-            'border-color': '#00ffff'
-          },
-          '50%': {
-            'box-shadow': '0 0 30px #00ffff, 0 0 60px #00ffff, 0 0 90px #00ffff',
-            'border-color': '#00ccff'
-          }
-        },
         
         // 3D Perspective and transforms
         '.perspective-1000': {

@@ -6,13 +6,15 @@ import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Contacts from './pages/Contacts.jsx';
 import CursorGlow from './components/CursorGlow.jsx';
+import SpotlightEffect from './components/SpotlightEffect.jsx';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="min-h-screen flex flex-col bg-background relative">
+        <SpotlightEffect />
         <Header />
-        <div className="flex-grow">
+        <div className="flex-grow relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

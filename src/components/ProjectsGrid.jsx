@@ -36,12 +36,12 @@ const ProjectsGrid = () => {
   }, []);
 
   const projects = [
-    // Картки під заголовком
+    // Картки навколо тайтлу по колу
     {
       id: 1,
       key: 'novaPost',
-      position: { top: '40%', left: '32%' },
-      mobilePosition: { top: '40%', left: '10%' },
+      position: { top: '35%', left: '20%' },
+      mobilePosition: { top: '35%', left: '10%' },
       animation: 'float-1',
       letter: 'N',
       title: 'Nova Post',
@@ -54,8 +54,8 @@ const ProjectsGrid = () => {
     {
       id: 2,
       key: 'healthPad',
-      position: { top: '42.5%', left: '65%', transform: 'translateX(-50%)' },
-      mobilePosition: { top: '45%', right: '10%' },
+      position: { top: '20%', left: '50%', transform: 'translateX(-50%)' },
+      mobilePosition: { top: '20%', right: '10%' },
       animation: 'float-2',
       letter: 'H',
       title: 'HealthPad',
@@ -65,12 +65,11 @@ const ProjectsGrid = () => {
       hoverLogo: getAssetPath('logos/healthpad-logo.png'),
       color: '#11B6E2'
     },
-    // Інші картки
     {
       id: 3,
       key: 'vertexStudio',
-      position: { top: '50%', left: '15%' },
-      mobilePosition: { top: '50%', left: '10%' },
+      position: { top: '35%', left: '80%' },
+      mobilePosition: { top: '35%', left: '80%' },
       animation: 'float-3',
       letter: 'V',
       title: 'Vertex Studio',
@@ -83,8 +82,8 @@ const ProjectsGrid = () => {
     {
       id: 4,
       key: 'rivertonGroup',
-      position: { top: '60%', left: '50%', transform: 'translateX(-50%)' },
-      mobilePosition: { top: '60%', left: '50%' },
+      position: { top: '65%', left: '30%' },
+      mobilePosition: { top: '65%', left: '20%' },
       animation: 'float-4',
       letter: 'R',
       title: 'Riverton Group',
@@ -97,8 +96,8 @@ const ProjectsGrid = () => {
     {
       id: 5,
       key: 'openKharkiv',
-      position: { top: '50%', left: '85%' },
-      mobilePosition: { top: '55%', left: '85%' },
+      position: { top: '65%', left: '70%' },
+      mobilePosition: { top: '65%', left: '70%' },
       animation: 'float-5',
       letter: 'O',
       title: 'Open Kharkiv',
@@ -107,6 +106,52 @@ const ProjectsGrid = () => {
       logo: getAssetPath('logos/openkharkiv-logo.png'),
       hoverLogo: getAssetPath('logos/openkharkiv-logo.png'),
       color: '#19A05C'
+    },
+    // Додаткові менші картки
+    {
+      id: 6,
+      key: 'smallCard1',
+      position: { top: '25%', left: '35%' },
+      mobilePosition: { top: '25%', left: '35%' },
+      animation: 'float-1',
+      letter: '•',
+      title: 'Small Project 1',
+      description: 'A small additional project showcase',
+      mockups: [],
+      logo: '',
+      hoverLogo: '',
+      color: '#6B7280',
+      isSmall: true
+    },
+    {
+      id: 7,
+      key: 'smallCard2',
+      position: { top: '25%', left: '65%' },
+      mobilePosition: { top: '25%', left: '65%' },
+      animation: 'float-2',
+      letter: '•',
+      title: 'Small Project 2',
+      description: 'Another small project showcase',
+      mockups: [],
+      logo: '',
+      hoverLogo: '',
+      color: '#6B7280',
+      isSmall: true
+    },
+    {
+      id: 8,
+      key: 'smallCard3',
+      position: { top: '70%', left: '50%', transform: 'translateX(-50%)' },
+      mobilePosition: { top: '70%', left: '50%', transform: 'translateX(-50%)' },
+      animation: 'float-3',
+      letter: '•',
+      title: 'Small Project 3',
+      description: 'Third small project showcase',
+      mockups: [],
+      logo: '',
+      hoverLogo: '',
+      color: '#6B7280',
+      isSmall: true
     }
   ];
 
@@ -142,32 +187,49 @@ const ProjectsGrid = () => {
           <div className="relative">
             
             <div
-              className={`rounded-lg hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 cursor-pointer flex items-center justify-center overflow-hidden ${
-                !isVisible 
-                  ? 'opacity-0' 
+              className={`rounded-lg hover:scale-125 hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-all duration-300 cursor-pointer flex items-center justify-center overflow-hidden ${project.isSmall ? 'border border-[#1A1A1A]' : ''}`}
+              style={{
+                transformOrigin: 'center center',
+                ...(!isVisible 
+                  ? { opacity: 0 } 
                   : clickedProject?.id === project.id 
-                    ? 'w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] blur-sm bg-[#141414]/60'
+                    ? { 
+                        width: project.isSmall ? '42px' : '84px', 
+                        height: project.isSmall ? '42px' : '84px', 
+                        filter: 'blur(4px)', 
+                        backgroundColor: '#14141460' 
+                      }
                     : hoveredProject?.id === project.id 
-                      ? 'w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] blur-none bg-[#141414]/100'
-                      : 'w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] bg-[#141414]/60'
-              }`}
-            style={{
-              backgroundColor: clickedProject?.id === project.id 
-                ? project.color 
-                : hoveredProject?.id === project.id 
-                  ? project.color
-                  : project.color,
-              backgroundImage: `url(${
-                clickedProject?.id === project.id
-                  ? project.logo
-                  : hoveredProject?.id === project.id
-                    ? project.hoverLogo
-                    : project.logo
-              })`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-            }}
+                      ? { 
+                          width: project.isSmall ? '42px' : '84px', 
+                          height: project.isSmall ? '42px' : '84px', 
+                          filter: 'none', 
+                          backgroundColor: '#141414' 
+                        }
+                      : { 
+                          width: project.isSmall ? '32px' : '64px', 
+                          height: project.isSmall ? '32px' : '64px', 
+                          backgroundColor: '#14141460' 
+                        }
+                ),
+                backgroundColor: project.isSmall 
+                  ? '#141414' 
+                  : clickedProject?.id === project.id 
+                    ? project.color 
+                    : hoveredProject?.id === project.id 
+                      ? project.color
+                      : project.color,
+                backgroundImage: project.isSmall ? 'none' : `url(${
+                  clickedProject?.id === project.id
+                    ? project.logo
+                    : hoveredProject?.id === project.id
+                      ? project.hoverLogo
+                      : project.logo
+                })`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
             onClick={(e) => {
               if (clickedProject?.id === project.id) {
                 setClickedProject(null);
@@ -183,7 +245,7 @@ const ProjectsGrid = () => {
           </div>
           
           {/* Project Label - Only visible on hover */}
-          {hoveredProject?.id === project.id && (
+          {hoveredProject?.id === project.id && !project.isSmall && (
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-0 py-1 text-white text-[12px] sm:text-[14px] font-helvetica pointer-events-none text-center whitespace-nowrap">
               <div className="font-medium font-helvetica">{project.title}</div>
             </div>
@@ -193,7 +255,7 @@ const ProjectsGrid = () => {
          })}
       
       {/* Blur background overlay */}
-      {clickedProject && (
+      {clickedProject && !clickedProject.isSmall && (
         <div 
           className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 cursor-pointer" 
           onClick={() => setClickedProject(null)}
@@ -201,7 +263,7 @@ const ProjectsGrid = () => {
       )}
       
       {/* Modal tooltip */}
-      {clickedProject && (
+      {clickedProject && !clickedProject.isSmall && (
         <div
           className="fixed z-50"
           style={getModalPosition()}

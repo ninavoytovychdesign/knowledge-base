@@ -56,7 +56,7 @@ export function Hero() {
   };
 
   return (
-          <section className="relative flex flex-col items-center justify-start h-[800px] bg-black bg-grid-white/[0.02] pt-36">
+          <section className="relative flex flex-col items-center justify-center min-h-[calc(100vh-240px)] bg-black bg-grid-white/[0.02]">
       {/* Spotlight Effect */}
       <Spotlight />
       
