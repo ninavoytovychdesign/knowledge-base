@@ -165,7 +165,7 @@ const ProjectsGrid = () => {
            return (
              <div
                key={project.id}
-               className={`fixed z-10 ${project.animation}`}
+               className={`fixed z-30 ${project.animation}`}
                style={{
                  top: position.top,
                  left: position.left,
@@ -187,7 +187,7 @@ const ProjectsGrid = () => {
           <div className="relative">
             
             <div
-              className={`rounded-lg hover:scale-125 hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-all duration-300 cursor-pointer flex items-center justify-center overflow-hidden ${project.isSmall ? 'border border-[#1A1A1A]' : ''}`}
+              className={`rounded-lg hover:scale-125 hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-all duration-300 cursor-pointer flex items-center justify-center overflow-hidden ${project.isSmall ? 'border border-[#1A1A1A] backdrop-blur-md' : ''}`}
               style={{
                 transformOrigin: 'center center',
                 ...(!isVisible 
@@ -213,7 +213,7 @@ const ProjectsGrid = () => {
                         }
                 ),
                 backgroundColor: project.isSmall 
-                  ? '#141414' 
+                  ? '#14141430' 
                   : clickedProject?.id === project.id 
                     ? project.color 
                     : hoveredProject?.id === project.id 
@@ -253,6 +253,45 @@ const ProjectsGrid = () => {
              </div>
            );
          })}
+      
+      {/* Orbital Lines connecting all cards */}
+      <svg className="fixed inset-0 pointer-events-none z-20" style={{ width: '100vw', height: '100vh' }}>
+        {/* Main orbital ellipse connecting all cards */}
+        <ellipse
+          cx="50%"
+          cy="45%"
+          rx="40%"
+          ry="24%"
+          fill="none"
+          stroke="#333333"
+          strokeWidth="1"
+          opacity="0.6"
+        />
+        
+        {/* Secondary orbital ellipse */}
+        <ellipse
+          cx="50%"
+          cy="45%"
+          rx="28%"
+          ry="17%"
+          fill="none"
+          stroke="#333333"
+          strokeWidth="1"
+          opacity="0.4"
+        />
+        
+        {/* Inner orbital ellipse */}
+        <ellipse
+          cx="50%"
+          cy="45%"
+          rx="16%"
+          ry="10%"
+          fill="none"
+          stroke="#333333"
+          strokeWidth="1"
+          opacity="0.3"
+        />
+      </svg>
       
       {/* Blur background overlay */}
       {clickedProject && !clickedProject.isSmall && (
